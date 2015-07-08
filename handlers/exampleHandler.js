@@ -11,6 +11,7 @@ exports.req = function(obj, cb) {
        { name : 'Peter', surname : "Sarket", married : false , id:"4" },
        { name : 'Peter', surname : "Warket", married : true , id:"5" }       
     ];
+   _log.d("RUN EXAMPLEHANDLER " + JSON.stringify(obj));
    cb(obj);
 
 
