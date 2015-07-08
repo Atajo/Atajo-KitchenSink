@@ -8,7 +8,10 @@
 
  }
 
+.jSignature{
 
+  border: 1px solid rgba(0,0,0,0.5) !important;
+}
 
 
 .cardFormElement .invalidInput { 

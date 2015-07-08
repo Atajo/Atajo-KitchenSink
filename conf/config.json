@@ -124,6 +124,14 @@
                 "subtext": "Photo Test",
                 "views": ["photo"],
                 "default": false
+            },
+            "signature": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Signature",
+                "subtext": "Signature Test",
+                "views": ["signature"],
+                "default": false
             }
 
         },
@@ -150,6 +158,14 @@
                 "label": "Photo",
                 "subtext": "Photo Test",
                 "views": ["photo"],
+                "default": false
+            },
+            "signature": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Signature",
+                "subtext": "Signature Test",
+                "views": ["signature"],
                 "default": false
             }
 
