@@ -1,0 +1,167 @@
+<card id="storage" fill="true" >
+
+<face id="storageFront" settings="default:true" controller="_storage.Ctrl">
+    <ctl>Storage</ctl>
+    <ctr>
+    </ctr>
+
+    <content>
+      <ul>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle" flip-target="storage_set" >Store Single Object<br /><x class="cardListElementSubText">_model.set</x></td>
+            </tr>
+          </table>
+        </li>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle" flip-target="storage_batch" >Store Multiple Object<br /><x class="cardListElementSubText">_model.batch</x></td>
+            </tr>
+          </table>
+        </li>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle" flip-target="storage_getAll" >Read All Object<br /><x class="cardListElementSubText">_model.getAll</x></td>
+            </tr>
+          </table>
+        </li>
+      </ul>
+
+    </content>
+    <cbl>TODO</cbl>
+    <cbr></cbr>
+</face>
+
+<face id="storage_set" face="back" controller="_storage.Set_Ctrl">
+    <ctl>Store Single Object</ctl>
+    <ctr class="gui" flip-target="close">x</ctr>
+
+       <content>
+      <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+
+                  <tr>
+                     <td class="cardFormElementTitle">Single Object</td>
+                  </tr>
+
+                   <tr>
+                    <td colspan="2" class="cardFormElementContent">
+                      <div  class="cardInlay">
+
+                      <ul>
+        <li class="cardListElement">
+         <table>
+          <tr>
+            <td width="50" align="right">
+                  <input name="key" type="number" ng-model="set.key" style="width:50px" placeholder="key" />
+                </td>
+                <td style="font-size:8pt; font-weight:bold;">
+                    <input type="text" ng-model="set.data" placeholder="data" />
+               </td>
+          </tr>
+         </table>
+        </li>
+      </ul>
+                      </div>
+                     </td>
+                   </tr>
+
+              </table><br />
+
+
+
+    </content>        
+    <cbl></cbl>
+    <cbr><x onClick="_storage.set()">Save Data</x></cbr>
+
+</face>
+
+<face id="storage_getAll" face="back" controller="_storage.GetAll_Ctrl">
+    <ctl>Read All Objects</ctl>
+    <ctr class="gui" flip-target="close">x</ctr>
+
+    <content>  
+
+        <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+
+                  <tr>
+                     <td class="cardFormElementTitle">Get All Storage</td>
+
+                  </tr>
+
+                   <tr>
+                    <td colspan="2" class="cardFormElementContent">
+                      <div  class="cardInlay">
+
+                      {{getAll}}
+                      
+                    
+                      </div>
+                     </td>
+                   </tr>
+
+              </table><br />
+
+                      <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+
+                  <tr>
+                     <td class="cardFormElementTitle">Get All Storage</td>
+
+                  </tr>
+
+                   <tr>
+                    <td colspan="2" class="cardFormElementContent">
+                      <div  class="cardInlay">
+                        {{getAll.length}}
+                      <ul>
+                      <li class="cardListElement" >
+                      <table class="cardFormList" width="100%">
+                        <tr ng-repeat="item in getAll" >
+                          <td width="50" align="right">
+                               key
+                            </td>
+                            <td style="font-size:8pt; font-weight:bold;">
+                                data
+                           </td>
+                        </tr>
+                       </table>
+                      </li>
+                     </ul>
+                      </div>
+                     </td>
+                   </tr>
+
+              </table><br />
+
+    </content>        
+    <cbl></cbl>
+    <cbr></cbr>
+
+</face>
+<face id="storage_batch" face="back" controller="_storage.Batch_Ctrl">
+    <ctl>Store Multiple Objects</ctl>
+    <ctr class="gui" flip-target="close">x</ctr>
+
+    <content>  
+
+      <li class="cardListElement" ng-show="batch.length > 0" >
+        <table class="cardFormList" width="100%">
+          <tr ng-repeat="item in batch" >
+            <td width="50" align="right">
+                <input name="key" type="number" ng-model="item.key" style="width:50px" placeholder="key" />
+              </td>
+              <td style="font-size:8pt; font-weight:bold;">
+                  <input type="text" ng-model="item.data" placeholder="data" />
+             </td>
+          </tr>
+         </table>
+        </li>
+
+    </content>        
+    <cbl><x onClick="_storage.addBatch()">Add Object</x></cbl>
+    <cbr><x onClick="_storage.batch()">Save Data</x></cbr>
+
+</face>
+</card>
