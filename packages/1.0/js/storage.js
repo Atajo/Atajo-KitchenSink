@@ -30,6 +30,7 @@ _storage = {
 			function() {
 				_storage._Ctrl();  
                 _storage._Set_Ctrl();
+                _storage._GetAll_Ctrl();
 			}
 			, 1000);
     	
@@ -75,7 +76,7 @@ _storage = {
     GetAll_Ctrl : function($scope)
     {
         _storage.getAll();
-        $scope.set = _storage.model.set;
+        $scope.getAll = _storage.model.getAll;
     },
 
     _GetAll_Ctrl : function()
@@ -86,7 +87,7 @@ _storage = {
         
         scope.$apply(function() 
         {  
-           scope.set = _storage.model.set;
+           scope.getAll = _storage.model.getAll;
         }); 
     }, 
     Batch_Ctrl : function($scope)
@@ -125,7 +126,8 @@ _storage = {
     {
         _model.getAll("testStorage",  function(records) {  
 
-            alert(JSON.stringify(records));
+            _storage.model.getAll = records;
+            _storage._GetAll_Ctrl();
 
         });
 
