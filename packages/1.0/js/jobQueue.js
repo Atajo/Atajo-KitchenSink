@@ -1,7 +1,8 @@
 _jobQueue = {
 
     model : [ ],
-    
+    custom : [ ],
+
     onExit : function() { var _ = this;
 
     },
@@ -9,10 +10,23 @@ _jobQueue = {
     onLoaded: function () { var _ = this;
 
     	 layout.attach('#jobQueueFront');
+       layout.attach('#jobQueue_Sing');
+       layout.attach('#jobQueue_Dup');
+       layout.attach('#jobQueue_Custom');
+
+       _jobQueue.custom = {
+        JobName : "name",
+        JobDesc : "DEsc",
+        JobCode : 1,
+        JobDup : false,
+        JobClear : false,
+        JobLockUI : false,
+       }
 
 		setTimeout(
 			function() {
 				_jobQueue._Ctrl();  
+        _jobQueue._Custom_Ctrl();
 			}
 			, 1000);
     	
@@ -23,93 +37,76 @@ _jobQueue = {
 
     },
 
-    sendUnknownJob : function(bool)
+    sendUnknownJob : function(name,description,allowDuplicate,clearOnDone,lockUI,cb)
     {
-        if(typeof bool == 'undefined') {  bool = 0; }
 
-        jobName = "Unknown Handler";
-        
-        jobDesc = "Handler does not exist";
-        
+      if(typeof code == 'undefined') {  code = 0; }
+      if(typeof name == 'undefined') {  name = "JOB NAME " + code; }
+      if(typeof description == 'undefined') {  description = "JOB DESC "; }
+      if(typeof allowDuplicate == 'undefined') {  allowDuplicate = false; }
+      if(typeof clearOnDone == 'undefined') {  clearOnDone = false; }
+      if(typeof lockUI == 'undefined') {  lockUI = false; }
+      if(typeof cb == 'undefined') {  cb = false; }
+
+      try
+      {
         jobData = { action:'unknownHandler'};
 
-        if(bool == 0)
-        {
+        JOB = {
+          jobName: name,
+          jobDesc: description,
+          data: jobData,
+          allowDuplicate: allowDuplicate,
+          clearOnDone: clearOnDone,
+          lockUI: lockUI,
+          callback: cb,
+        };
+      
+        _log.d("JOB = " + JSON.stringify(JOB));
+        jobQueue.add(JOB);
 
-          jobQueue.addJob(jobName, jobDesc, jobData);
+      }catch(err)
+      {
 
-        }else if(bool == 1)
-        {
+          alert(err);
 
-          jobQueue.addJob(jobName, jobDesc, jobData, false, false);
-
-        }else if(bool == 2)
-        {
-
-          jobQueue.addJob(jobName, jobDesc, jobData, false, true);
-
-        }else if(bool == 3)
-        {
-
-          jobQueue.addJob(jobName, jobDesc, jobData, true, false);
-
-        }else if(bool == 4)
-        {
-
-          jobQueue.addJob(jobName, jobDesc, jobData, true, true);
-
-        }
+      }
 
     },
 
-    sendJob : function(code,bool,name,description)
+    sendJob : function(code,name,description,allowDuplicate,clearOnDone,lockUI,cb)
     {
 
-      if(typeof bool == 'undefined') {  bool = 0; }
-
+      if(typeof code == 'undefined') {  code = 0; }
       if(typeof name == 'undefined') {  name = "JOB NAME " + code; }
-
-      if(typeof description == 'undefined') {  description = "JOB DESC " + bool; }
+      if(typeof description == 'undefined') {  description = "JOB DESC "; }
+      if(typeof allowDuplicate == 'undefined') {  allowDuplicate = false; }
+      if(typeof clearOnDone == 'undefined') {  clearOnDone = false; }
+      if(typeof lockUI == 'undefined') {  lockUI = false; }
+      if(typeof cb == 'undefined') {  cb = false; }
+      
 
       try
       {
 
         response = { code : code , req : "req", res : "res", msg : "msg"  };
 
-        jobName = name;
-        
-        jobDesc = description;
-        
         jobData = { action:'jobQueue', data: response};
+
+      JOB = {
+        jobName: name,
+        jobDesc: description,
+        data: jobData,
+        allowDuplicate: allowDuplicate,
+        clearOnDone: clearOnDone,
+        lockUI: lockUI,
+        callback: cb,
+      };
+      
+      _log.d("JOB = " + JSON.stringify(JOB));
+      jobQueue.add(JOB);
+
         
-        alert(bool);
-
-        if(bool == 0)
-        {
-
-          jobQueue.addJob(jobName, jobDesc, jobData);
-
-        }else if(bool == 1)
-        {
-
-          jobQueue.addJob(jobName, jobDesc, jobData, false, false);
-
-        }else if(bool == 2)
-        {
-
-          jobQueue.addJob(jobName, jobDesc, jobData, false, true);
-
-        }else if(bool == 3)
-        {
-
-          jobQueue.addJob(jobName, jobDesc, jobData, true, false);
-
-        }else if(bool == 4)
-        {
-
-          jobQueue.addJob(jobName, jobDesc, jobData, true, true);
-
-        }
 
       }catch(err)
       {
@@ -122,19 +119,65 @@ _jobQueue = {
 
     Ctrl : function($scope)
     {
-    	$scope.data = _jobQueue.model;
+      $scope.data = _jobQueue.model;
     },
 
     _Ctrl : function()
-  	{
-	    e = document.getElementById('jobQueueFront__FACE');
-	    
-	    scope = angular.element(e).scope();
-	    
-	    scope.$apply(function() 
-	    {  
-	       scope.data = _jobQueue.model;
-	    }); 
-  },
+    {
+      e = document.getElementById('jobQueueFront__FACE');
+      
+      scope = angular.element(e).scope();
+      
+      scope.$apply(function() 
+      {  
+         scope.data = _jobQueue.model;
+      }); 
+    },
+    Custom_Ctrl : function($scope)
+    {
+      $scope.custom = _jobQueue.custom;
+
+      // $('.make-switch-checklist').on('touchstart', function () {
+      //     var me = $(this);
+      //     if ($(me).prop('checked')) {
+      //         $(me).prop('checked', false);
+      //         _jobQueue.custom.JobClear = false;
+      //     } else {
+      //         _jobQueue.custom.JobClear = true;
+      //          $(me).prop('checked', true);
+      //     }
+      //   });
+
+    },
+
+    _Custom_Ctrl : function()
+    {
+
+      e = document.getElementById('jobQueue_Custom__FACE');
+      
+      scope = angular.element(e).scope();
+      
+      scope.$apply(function() 
+      {  
+        scope.custom = _jobQueue.custom;
+
+      }); 
+
+
+
+    },
+
+    addCustomJob : function()
+    {
+
+      _log.d("addCustomJob " + JSON.stringify(_jobQueue.custom ));
+      _jobQueue.sendJob(_jobQueue.custom.JobCode,
+        _jobQueue.custom.JobName,
+        _jobQueue.custom.JobDesc + " " + _jobQueue.custom.JobCode,
+        _jobQueue.custom.JobDup,
+        _jobQueue.custom.JobClear,
+        _jobQueue.custom.JobLockUI,
+        false);
+    }
 
 };;;
