@@ -11,7 +11,7 @@
 
    "VERSIONS"   :
    {
-    	"DEV" : {  "ID" : "1.0", "DEBUG":true,  "COREVERSION" : "1.0" },
+      "DEV" : {  "ID" : "1.0", "DEBUG":true,  "COREVERSION" : "1.0" },
       "QAS" : { "ID"  : "1.0", "DEBUG":true,  "COREVERSION" : "1.0" },
       "PRD" : { "ID"  : "1.0", "DEBUG":false, "COREVERSION" : "1.0" }
    },
@@ -101,40 +101,91 @@
 
     "LAYOUT" : {
         "small": {
-            "example": {
+            "testList": {
                 "menu": true,
                 "icon": "&#xf004;",
-                "label": "Example Card",
-                "subtext": "A starter card to get you familiar",
-                "views": ["example"],
+                "label": "Test List",
+                "subtext": "Show all Kitchensink tests",
+                "views": ["testList"],
                 "default": true
+            },
+            "jobQueue": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Job Queue",
+                "subtext": "Job Queue Test",
+                "views": ["jobQueue"],
+                "default": false
+            },
+            "photo": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Photo",
+                "subtext": "Photo Test",
+                "views": ["photo"],
+                "default": false
+            },
+            "signature": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Signature",
+                "subtext": "Signature Test",
+                "views": ["signature"],
+                "default": false
             }
-
-
-
-
-
 
         },
         "large": {
-            "example": {
+            "testList": {
                 "menu": true,
                 "icon": "&#xf004;",
-                "label": "Example Card",
-                "subtext": "A starter card to get you familiar",
-                "views": ["example"],
+                "label": "Test List",
+                "subtext": "Show all Kitchensink tests",
+                "views": ["testList"],
                 "default": true
+            },
+            "jobQueue": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Job Queue",
+                "subtext": "Job Queue Test",
+                "views": ["jobQueue"],
+                "default": false
+            },
+            "photo": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Photo",
+                "subtext": "Photo Test",
+                "views": ["photo"],
+                "default": false
+            },
+            "signature": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Signature",
+                "subtext": "Signature Test",
+                "views": ["signature"],
+                "default": false
             }
 
         }
     },
     "SERVICES":
         [
-
+            {
+              "service"  : "example",
+              "label"    : "example",
+              "key"      : "id",
+              "handler"  : "exampleHandler"
+            }
 
         ],
    "ACTIONS":
         [
-
+            {
+               "action" : "jobQueue",
+               "handler" : "jobQueue"
+             }
         ]
 }

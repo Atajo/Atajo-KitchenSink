@@ -1,0 +1,35 @@
+<card id="testList" fill="true" >
+
+<face id="testListFront" settings="default:true" controller="_testList.Ctrl">
+    <ctl>WELCOME LIST!</ctl>
+    <ctr>
+    </ctr>
+
+    <content>
+      <ul>
+       <li class="cardListElement">
+         <table>
+          <tr>
+            <td class="txtTitle" onClick="layout.sendMessage('jobQueue');">Job Queue<br/>
+              <x class="cardListElementSubText">Test the Job Queue</x>
+            </td>
+          </tr>
+          <tr>
+            <td class="txtTitle" onClick="layout.sendMessage('photo');">Photo<br/>
+              <x class="cardListElementSubText">Test photos</x>
+            </td>
+          </tr>
+          <tr>
+            <td class="txtTitle" onClick="layout.sendMessage('signature');">Signature<br/>
+              <x class="cardListElementSubText">Test Signature</x>
+            </td>
+          </tr>
+         </table>
+        </li>
+      </ul>
+    </content>
+    <cbl></cbl>
+    <cbr><x onclick="_testList.getData()">Show Data</x></cbr>
+
+</face>
+</card>
