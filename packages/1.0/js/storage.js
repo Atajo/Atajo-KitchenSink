@@ -12,6 +12,8 @@ _storage = {
          layout.attach('#storage_set');
          layout.attach('#storage_getAll');
          layout.attach('#storage_batch');
+         layout.attach('#storage_getKey');
+         layout.attach('#storage_del');
 
          set = 
          {
@@ -23,17 +25,10 @@ _storage = {
          {
             set : set,
             batch : [ ],
+            getKey : { key : undefined , data : ''},
+            del : { key : undefined},
          }
 
-
-		setTimeout(
-			function() {
-				_storage._Ctrl();  
-                _storage._Set_Ctrl();
-                _storage._GetAll_Ctrl();
-			}
-			, 1000);
-    	
     },
 
     onMessage : function() {
@@ -90,6 +85,23 @@ _storage = {
            scope.getAll = _storage.model.getAll;
         }); 
     }, 
+    GetKey_Ctrl : function($scope)
+    {
+        _storage.getAll();
+        $scope.getKey = _storage.model.getKey;
+    },
+
+    _GetKey_Ctrl : function()
+    {
+        e = document.getElementById('storage_getKey__FACE');
+        
+        scope = angular.element(e).scope();
+        
+        scope.$apply(function() 
+        {  
+           scope.getKey = _storage.model.getKey;
+        }); 
+    }, 
     Batch_Ctrl : function($scope)
     {
         $scope.batch = _storage.model.batch;
@@ -106,18 +118,33 @@ _storage = {
            scope.batch = _storage.model.batch;
         }); 
     },
+    Del_Ctrl : function($scope)
+    {
+        $scope.del = _storage.model.del;
+    },
+
+    _Del_Ctrl : function()
+    {
+        e = document.getElementById('storage_del__FACE');
+        
+        scope = angular.element(e).scope();
+        
+        scope.$apply(function() 
+        {  
+           scope.del = _storage.model.del;
+        }); 
+        
+    },
 
     set : function()
     {
-        alert("set: " + JSON.stringify(_storage.model.set));
          _model.set("testStorage",
             _storage.model.set,
             function()
              {  
                 alert('Save Successful');
-                layout.sendMessage('storage');
                 _storage.model.set = { key : undefined, data : '' };
-                _storage._GetAll_Ctrl();
+                _storage._Set_Ctrl();
              }
            );
     },
@@ -145,9 +172,34 @@ _storage = {
            function() { 
                 alert("Save Successful");
                 _storage.model.batch = [];
-                layout.sendMessage('storage');
                 _storage._Batch_Ctrl();
               });
+    },
+    nuke : function()
+    {
+        _model.nuke("testStorage", function() {  
+            alert("Delete Successful");
+        });
+    },
+    getKey : function()
+    {
+        _model.getKey("testStorage", _storage.model.getKey.key,  function(record) {  
+
+            _storage.model.getKey.data = record;
+            if(record == null )
+            {
+                alert("Key does not exist");
+            }
+            _storage._GetKey_Ctrl();
+        });
+    },
+    del : function()
+    {
+        _model.del("testStorage", _storage.model.del.key + "", function() {  
+            alert("Entry deleted");
+            _storage.model.del.key = undefined;
+            _storage._Del_Ctrl();
+        });
     }
 
 };;;
