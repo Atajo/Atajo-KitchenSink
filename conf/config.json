@@ -180,6 +180,14 @@
                 "subtext": "API Request",
                 "views": ["apiReq"],
                 "default": false
+            },
+            "flip": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Flip",
+                "subtext": "Flip",
+                "views": ["flip"],
+                "default": false
             }
 
         },
@@ -262,6 +270,14 @@
                 "label": "API Request",
                 "subtext": "API Request",
                 "views": ["apiReq"],
+                "default": false
+            },
+            "flip": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Flip",
+                "subtext": "Flip",
+                "views": ["flip"],
                 "default": false
             }
 
