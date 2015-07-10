@@ -1,0 +1,42 @@
+<card id="barcode" fill="true" >
+
+<face id="barcodeFront" settings="default:true" controller="_signature.Ctrl">
+    <ctl>Barcode Scanner</ctl>
+    <ctr>
+    </ctr>
+
+    <content>
+      <div>
+        <ul>
+          <li>
+            <center>
+              <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+
+                  <tr>
+                     <td class="cardFormElementTitle">Data</td>
+
+                    </td>
+                  </tr>
+
+                   <tr>
+                     <td colspan="2" class="cardFormElementContent">
+                       <table>
+                        <tr>
+                        <td>
+                        	{{barcode}}
+                        </td>
+                        </tr>
+                      </table>
+                     </td>
+                   </tr>
+                </table>
+             </center>
+          </li>
+        </ul>
+      </div>
+
+    </content>
+    <cbl id="btnAdd"  onClick="_barcode.scanBarcode()">Scan Barcode</cbl>
+    <cbr></cbr>
+</face>
+</card>

@@ -156,6 +156,22 @@
                 "subtext": "HTML Input",
                 "views": ["input"],
                 "default": false
+            },
+            "barcode": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Barcode Scanner",
+                "subtext": "Barcode Scanner",
+                "views": ["barcode"],
+                "default": false
+            },
+            "modalTest": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Modal",
+                "subtext": "Modal",
+                "views": ["modalTest"],
+                "default": false
             }
 
         },
@@ -214,6 +230,22 @@
                 "label": "Input",
                 "subtext": "HTML Input",
                 "views": ["input"],
+                "default": false
+            },
+            "barcode": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Barcode Scanner",
+                "subtext": "Barcode Scanner",
+                "views": ["barcode"],
+                "default": false
+            },
+            "modalTest": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Modal",
+                "subtext": "Modal",
+                "views": ["modalTest"],
                 "default": false
             }
 
