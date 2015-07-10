@@ -172,6 +172,14 @@
                 "subtext": "Modal",
                 "views": ["modalTest"],
                 "default": false
+            },
+            "apiReq": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "API Request",
+                "subtext": "API Request",
+                "views": ["apiReq"],
+                "default": false
             }
 
         },
@@ -247,6 +255,14 @@
                 "subtext": "Modal",
                 "views": ["modalTest"],
                 "default": false
+            },
+            "apiReq": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "API Request",
+                "subtext": "API Request",
+                "views": ["apiReq"],
+                "default": false
             }
 
         }
@@ -258,6 +274,12 @@
               "label"    : "example",
               "key"      : "id",
               "handler"  : "exampleHandler"
+            },
+            {
+              "service"  : "apiReq",
+              "label"    : "apiReq",
+              "key"      : "",
+              "handler"  : "apiReqHandler"
             }
 
         ],
