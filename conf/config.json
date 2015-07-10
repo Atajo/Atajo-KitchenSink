@@ -132,6 +132,30 @@
                 "subtext": "Signature Test",
                 "views": ["signature"],
                 "default": false
+            },
+            "gps": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "GPS",
+                "subtext": "GPS Test",
+                "views": ["gps"],
+                "default": false
+            },
+            "storage": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Storage",
+                "subtext": "Storage Test",
+                "views": ["storage"],
+                "default": false
+            },
+            "input": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Input",
+                "subtext": "HTML Input",
+                "views": ["input"],
+                "default": false
             }
 
         },
@@ -166,6 +190,30 @@
                 "label": "Signature",
                 "subtext": "Signature Test",
                 "views": ["signature"],
+                "default": false
+            },
+            "gps": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "GPS",
+                "subtext": "GPS Test",
+                "views": ["gps"],
+                "default": false
+            },
+            "storage": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Storage",
+                "subtext": "Storage Test",
+                "views": ["storage"],
+                "default": false
+            },
+            "input": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Input",
+                "subtext": "HTML Input",
+                "views": ["input"],
                 "default": false
             }
 

@@ -15,15 +15,9 @@ _storage = {
          layout.attach('#storage_getKey');
          layout.attach('#storage_del');
 
-         set = 
-         {
-            key : undefined,
-            data : ''
-         };
-
          _storage.model = 
          {
-            set : set,
+            set : { key : undefined , data : ''},
             batch : [ ],
             getKey : { key : undefined , data : ''},
             del : { key : undefined},
