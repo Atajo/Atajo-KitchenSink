@@ -1,0 +1,71 @@
+<card id="apiReq" fill="true" >
+
+<face id="apiReqFront" settings="default:true" controller="_signature.Ctrl">
+    <ctl>Api Request</ctl>
+    <ctr>
+    </ctr>
+
+    <content>
+      <div>
+        <ul>
+          <li>
+            <center>
+              <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+
+                  <tr>
+                     <td class="cardFormElementTitle">Send Data</td>
+
+                    </td>
+                  </tr>
+
+                   <tr>
+                     <td colspan="2" class="cardFormElementContent">
+                       <table>
+                        <tr>
+                        <td>
+                        	<input type="text" ng-model="data.apiSend"  />
+                        </td>
+                        </tr>
+                      </table>
+                     </td>
+                   </tr>
+                </table>
+                <br>
+                 <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+                   <tr>
+                     <td class="cardFormElementTitle">Recv Data</td>
+
+                    </td>
+                  </tr>
+
+                   <tr>
+                     <td colspan="2" class="cardFormElementContent">
+                     	<div  class="cardInlay">
+
+                     <ul>
+        			<li class="cardListElement">
+
+                       <table>
+                        <tr>
+                        <td>
+                        	<span>{{data.apiReq}}</span>
+                        </td>
+                        </tr>
+                      </table>
+                      </li>
+                  	 </ul>
+       				 </div>
+                     </td>
+                   </tr>
+                </table>
+
+             </center>
+          </li>
+        </ul>
+      </div>
+
+    </content>
+    <cbl id="btnAdd"  onClick="_apiReq.sendApiReq()">Get data</cbl>
+    <cbr></cbr>
+</face>
+</card>

@@ -1,0 +1,55 @@
+<card id="flip" fill="true" flip='rl'>
+
+<face id="flipFront" controller="_flip.Ctrl">
+    <ctl>Flip</ctl>
+    <ctr></ctr>
+    <content>
+      <ul>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle"  onClick="_flip.setDir('lr')" >Set Left to Righ<br /><x class="cardListElementSubText">Set Flip from left to right</x></td>
+            </tr>
+          </table>
+        </li>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle" onClick="_flip.setDir('rl')" >Set Right to Left<br /><x class="cardListElementSubText">Set Flip from right to left</x></td>
+            </tr>
+          </table>
+        </li>
+        <br>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle"  flip-target="flipBack" >{{data.dir}}<br /><x class="cardListElementSubText">Click To Flip</x></td>
+            </tr>
+          </table>
+        </li>
+      </ul>
+
+    </content>
+    <cbl></cbl>
+    <cbr></cbr>
+
+</face>
+<face id="flipBack" >
+    <ctl>Flip</ctl>
+    <ctr></ctr>
+    <content>
+      <ul>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle" flip-target="flipFront" >Go Back<br /><x class="cardListElementSubText">Go Back</x></td>
+            </tr>
+          </table>
+        </li>
+      </ul>
+    </content>
+    <cbl></cbl>
+    <cbr></cbr>
+
+</face>
+</card>
