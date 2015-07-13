@@ -13,23 +13,95 @@
               <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
 
                   <tr>
-                     <td class="cardFormElementTitle">Data</td>
+                     <td class="cardFormElementTitle">Text</td>
 
                     </td>
                   </tr>
 
                    <tr>
                      <td colspan="2" class="cardFormElementContent">
+                      <div  class="cardInlay">
                        <table>
                         <tr>
                         <td>
-                        	{{barcode}}
+                          {{barcode.text}}
                         </td>
                         </tr>
+                        </div>
                       </table>
                      </td>
                    </tr>
                 </table>
+
+                <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+
+                  <tr>
+                     <td class="cardFormElementTitle">Format</td>
+
+                    </td>
+                  </tr>
+
+                   <tr>
+                     <td colspan="2" class="cardFormElementContent">
+                      <div  class="cardInlay">
+                       <table>
+                        <tr>
+                        <td>
+                          {{barcode.format}}
+                        </td>
+                        </tr>
+                        </div>
+                      </table>
+                     </td>
+                   </tr>
+                </table>
+
+                <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+
+                  <tr>
+                     <td class="cardFormElementTitle">Cancelled</td>
+
+                    </td>
+                  </tr>
+
+                   <tr>
+                     <td colspan="2" class="cardFormElementContent">
+                      <div  class="cardInlay">
+                       <table>
+                        <tr>
+                        <td>
+                          {{barcode.cancelled}}
+                        </td>
+                        </tr>
+                        </div>
+                      </table>
+                     </td>
+                   </tr>
+                </table>
+
+                <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+
+                  <tr>
+                     <td class="cardFormElementTitle">Raw Data</td>
+
+                    </td>
+                  </tr>
+
+                   <tr>
+                     <td colspan="2" class="cardFormElementContent">
+                      <div  class="cardInlay">
+                       <table>
+                        <tr>
+                        <td>
+                          {{barcode}}
+                        </td>
+                        </tr>
+                        </div>
+                      </table>
+                     </td>
+                   </tr>
+                </table>
+
              </center>
           </li>
         </ul>

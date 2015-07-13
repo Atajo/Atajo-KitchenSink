@@ -13,7 +13,7 @@ _barcode = {
 
  		 _barcode.model = 
          {
-            barcode : { },
+            barcode : undefined,
          }
 
 		setTimeout(
@@ -51,8 +51,9 @@ _barcode = {
 
   	_scanner.scan(function(barcode)
   		{
-  			_;og.d("Scanner CallBack " + JSON.stringify(barcode));
+  			_log.d("Scanner CallBack " + JSON.stringify(barcode));
   			_barcode.model.barcode = barcode
+        // alert(JSON.stringify(barcode));
   			_barcode._Ctrl();
   		});
    },

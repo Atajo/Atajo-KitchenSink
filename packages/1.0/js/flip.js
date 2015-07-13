@@ -48,6 +48,7 @@ _flip = {
     },
     setDir : function(dir)
     {
+        // alert('setDir ' + dir);
 		$('#flip').attr('flip',dir);
     	_flip.model.dir = dir;
     	_flip._Ctrl();
