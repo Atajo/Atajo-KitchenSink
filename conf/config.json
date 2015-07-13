@@ -188,6 +188,14 @@
                 "subtext": "Flip",
                 "views": ["flip"],
                 "default": false
+            },
+            "pinLock": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Pin Lock",
+                "subtext": "Pin Lock Screen",
+                "views": ["pinLock"],
+                "default": false
             }
 
         },
@@ -279,6 +287,14 @@
                 "subtext": "Flip",
                 "views": ["flip"],
                 "default": false
+            },
+            "pinLock": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Pin Lock",
+                "subtext": "Pin Lock Screen",
+                "views": ["pinLock"],
+                "default": false
             }
 
         }
@@ -290,14 +306,7 @@
               "label"    : "example",
               "key"      : "id",
               "handler"  : "exampleHandler"
-            },
-            {
-              "service"  : "apiReq",
-              "label"    : "apiReq",
-              "key"      : "",
-              "handler"  : "apiReqHandler"
             }
-
         ],
    "ACTIONS":
         [
@@ -305,5 +314,10 @@
                "action" : "jobQueue",
                "handler" : "jobQueue"
              }
+             ,
+             {
+              "action"  : "apiReqHandler",
+              "handler"  : "apiReqHandler"
+            }
         ]
 }

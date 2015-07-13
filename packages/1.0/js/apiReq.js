@@ -49,7 +49,7 @@ _apiReq = {
 
   sendApiReq : function() {
 		
-		 api.req("apiReq",
+		 api.get("apiReqHandler",
 		 {
 		 	data: _apiReq.model.apiSend
          },
