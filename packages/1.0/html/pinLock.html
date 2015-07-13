@@ -1,0 +1,58 @@
+<card id="pinLock" fill="true" >
+
+<face id="pinLockFront" settings="default:true" controller="_pinLock.Ctrl">
+    <ctl>Lock Screen</ctl>
+    <ctr>
+    </ctr>
+
+    <content>
+      <div>
+        <ul>
+          <li>
+            <center>
+              <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+
+                  <tr>
+                     <td class="cardFormElementTitle">Data</td>
+
+                    </td>
+                  </tr>
+
+                   <tr>
+                     <td colspan="2" class="cardFormElementContent">
+                      <div  class="cardInlay">
+                       <table style="text-transform: none !important">
+                        <tr>
+                        <td>
+                        	To enable the pin screen by default on startup, change the pinLock entry in conf/config.json to 
+                          <br><br>
+        	"pinLock" :<br>
+            {<br>
+              "enabled" : true,<br>
+              "timeout" : 2<br>
+            }<br>
+<br>
+            and to disable it on startup change it to <br>
+<br>
+            "pinLock" :<br>
+            {<br>
+              "enabled" : false,<br>
+              "timeout" : 2<br>
+            }<br>
+                        </td>
+                        </tr>
+                      </table>
+                     </td>
+                   </tr>
+                 </div>
+                </table>
+             </center>
+          </li>
+        </ul>
+      </div>
+
+    </content>
+    <cbl onClick="_pinLock.showPinScreen()">Show Pin Lock</cbl>
+    <cbr></cbr>
+</face>
+</card>

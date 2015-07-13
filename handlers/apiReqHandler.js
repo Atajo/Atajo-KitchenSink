@@ -8,5 +8,4 @@ exports.req = function(obj, cb) {
    obj.RESPONSE = obj.data;
    cb(obj);
 
-
 }
