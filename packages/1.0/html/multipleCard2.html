@@ -1,0 +1,84 @@
+<card id="multipleCard2" fill="true" >
+
+<face id="multipleCard2Front" settings="default:true" controller="_multipleCard2.Ctrl">
+    <ctl>Multiple Cards:Card2</ctl>
+    <ctr>
+    </ctr>
+
+    <content>
+      <div>
+            <center>
+              <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+
+                  <tr>
+                     <td class="cardFormElementTitle">Card2:Face Front</td>
+                    </td>
+                  </tr>
+
+                   <tr>
+                     <td colspan="2" class="cardFormElementContent">
+                       <div  class="cardInlay">
+                       <table>
+
+                        <tr>
+                        <td>
+                        	This is Card2 Face Front
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="txtTitle" flip-target="multipleCard2Back" >Flip face<br /><x class="cardListElementSubText">Flip to back face</x></td>
+                        </tr>
+                      </table>
+                  	  </div>
+                     </td>
+                   </tr>
+                </table>
+             </center>
+      </div>
+
+    </content>
+    <cbl></cbl>
+    <cbr></cbr>
+</face>
+
+<face id="multipleCard2Back" >
+    <ctl>Multiple Cards:Card2</ctl>
+	<ctr class="gui" flip-target="close">x</ctr>
+
+    <content>
+      <div>
+            <center>
+              <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+
+                  <tr>
+                     <td class="cardFormElementTitle">Card2:Face Back</td>
+                    </td>
+                  </tr>
+
+                   <tr>
+                     <td colspan="2" class="cardFormElementContent">
+                       <div  class="cardInlay">
+                       <table>
+
+                        <tr>
+                        <td>
+                        	This is Card2 Face Back
+                        </td>
+                        </tr>
+                        <tr>
+                        <td class="txtTitle" flip-target="multipleCard2Front" >Flip face<br /><x class="cardListElementSubText">Flip to front face</x></td>
+                        </tr>
+                      </table>
+                  	  </div>
+                     </td>
+                   </tr>
+                </table>
+             </center>
+      </div>
+
+    </content>
+    <cbl></cbl>
+    <cbr></cbr>
+</face>
+
+</card>

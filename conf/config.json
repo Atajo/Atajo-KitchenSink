@@ -29,7 +29,7 @@
       },
 
        "enableLocation"          : true,
-       "enablePushNotifications" : false
+       "enablePushNotifications" : true
 
    },
 
@@ -196,6 +196,26 @@
                 "subtext": "Pin Lock Screen",
                 "views": ["pinLock"],
                 "default": false
+            },
+            "services": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Services",
+                "subtext": "Test Services",
+                "views": ["services"],
+                "default": false
+            },
+            "multipleCards": {
+              "menu": true,
+              "icon": "&#xf015;",
+              "label": "Multiple Cards",
+              "subtext": "Test Multiple cards",
+              "views": [
+                "multipleCard1",
+                "multipleCard2"
+              ],
+              "layout": "<table width='100%'><tr><td class='_multipleCard1' width='50%'></td><td class='_multipleCard2' width='50%'></td></tr></table>",
+              "default": false
             }
 
         },
@@ -295,17 +315,38 @@
                 "subtext": "Pin Lock Screen",
                 "views": ["pinLock"],
                 "default": false
+            },
+            "services": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Services",
+                "subtext": "Test Services",
+                "views": ["services"],
+                "default": false
+            },
+            "multipleCards": {
+              "menu": true,
+              "icon": "&#xf015;",
+              "label": "Multiple Cards",
+              "subtext": "Test Multiple cards",
+              "views": [
+                "multipleCard1",
+                "multipleCard2"
+              ],
+              "layout": "<table width='100%'><tr><td class='_multipleCard1' width='50%'></td><td class='_multipleCard2' width='50%'></td></tr></table>",
+              "default": false
             }
+            
 
         }
     },
     "SERVICES":
         [
             {
-              "service"  : "example",
-              "label"    : "example",
-              "key"      : "id",
-              "handler"  : "exampleHandler"
+              "service"  : "date",
+              "label"    : "Current Date",
+              "key"      : "key",
+              "handler"  : "dateHandler"
             }
         ],
    "ACTIONS":
@@ -318,6 +359,11 @@
              {
               "action"  : "apiReqHandler",
               "handler"  : "apiReqHandler"
+            }
+            ,
+             {
+              "action"  : "registerPush",
+              "handler"  : "registerPush"
             }
         ]
 }
