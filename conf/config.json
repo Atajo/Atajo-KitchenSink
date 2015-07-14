@@ -33,6 +33,12 @@
 
    },
 
+  "SCROLL" : { 
+
+      "forceLegacy" : true 
+
+  }, 
+
    "SETTINGS" :
    {
       "sendCredentials" : true,
@@ -224,6 +230,22 @@
                 "subtext": "Angular Functions",
                 "views": ["angular"],
                 "default": false
+            },
+            "screenFlip": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Screen Flip",
+                "subtext": "Flip Screen",
+                "views": ["screenFlip"],
+                "default": false
+            },
+            "scrollTest": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Scroll Test",
+                "subtext": "Scroll Test",
+                "views": ["scrollTest"],
+                "default": false
             }
 
         },
@@ -351,9 +373,23 @@
                 "subtext": "Angular Functions",
                 "views": ["angular"],
                 "default": false
+            },
+            "screenFlip": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Screen Flip",
+                "subtext": "Flip Screen",
+                "views": ["screenFlip"],
+                "default": false
+            },
+            "scrollTest": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Scroll Test",
+                "subtext": "Scroll Test",
+                "views": ["scrollTest"],
+                "default": false
             }
-            
-
         }
     },
     "SERVICES":

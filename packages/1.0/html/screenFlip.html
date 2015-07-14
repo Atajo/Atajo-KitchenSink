@@ -1,0 +1,38 @@
+<card id="screenFlip" fill="true" >
+
+<face id="screenFlipFront" settings="default:true" controller="_screenFlip.Ctrl">
+    <ctl>screenFlip</ctl>
+    <ctr>
+    </ctr>
+
+    <content>
+      <ul>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle" onClick="screen.lockOrientation('landscape-primary');" >Landscape Primary<br /><x class="cardListElementSubText">screen.lockOrientation('landscape-primary');</x></td>
+            </tr>
+          </table>
+        </li>
+                <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle" onClick="screen.lockOrientation('landscape-secondary');" >Landscape Secondary<br /><x class="cardListElementSubText">screen.lockOrientation('landscape-secondary');</x></td>
+            </tr>
+          </table>
+        </li>
+                <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle" onClick="screen.lockOrientation('portrait-primary');" >Portrait Primary<br /><x class="cardListElementSubText">screen.lockOrientation('portrait-primary');</x></td>
+            </tr>
+          </table>
+        </li>
+        
+      </ul>
+
+    </content>
+    <cbl></cbl>
+    <cbr></cbr>
+</face>
+</card>
