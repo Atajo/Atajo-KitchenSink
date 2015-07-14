@@ -8,7 +8,12 @@
     <content>
       <ul>
        <li class="cardListElement">
-         <table>
+         <table>  
+          <tr>
+            <td class="txtTitle" onClick="layout.show('screenFlip');">Screen Flip<br/>
+              <x class="cardListElementSubText">Flip Screen</x>
+            </td>
+          </tr>
           <tr>
             <td class="txtTitle" onClick="layout.show('jobQueue');">Job Queue<br/>
               <x class="cardListElementSubText">Test the Job Queue</x>
@@ -80,11 +85,17 @@
               <x class="cardListElementSubText">Test Angular Functions</x>
             </td>
           </tr>
+          </tr>
+             <tr>
+            <td class="txtTitle" onClick="layout.show('scrollTest');">Scroll Test<br/>
+              <x class="cardListElementSubText">Test Scroll</x>
+            </td>
+          </tr>
          </table>
         </li>
       </ul>
     </content>
-    <cbl></cbl>
+    <cbl onClick="app.doLogout();">Logout</cbl>
     <cbr></cbr>
 
 </face>
