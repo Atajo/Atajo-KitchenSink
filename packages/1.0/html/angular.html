@@ -1,0 +1,376 @@
+<card id="angular" fill="true" >
+
+<face id="angularFront" settings="default:true" controller="_angular.Ctrl">
+    <ctl>Angular Functions</ctl>
+    <ctr>
+    </ctr>
+
+
+
+    <content>
+      <ul>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle" flip-target="ng_repeat" >ng-repeat<br /><x class="cardListElementSubText">Test ng-repeat</x></td>
+            </tr>
+          </table>
+        </li>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle" flip-target="ng_show" >ng-show<br /><x class="cardListElementSubText">Test ng-show</x></td>
+            </tr>
+          </table>
+        </li>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle" flip-target="ng_hide" >ng-hide<br /><x class="cardListElementSubText">Test ng-hide</x></td>
+            </tr>
+          </table>
+        </li>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle" flip-target="ng_if" >ng-if<br /><x class="cardListElementSubText">Test ng-if</x></td>
+            </tr>
+          </table>
+        </li>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle" flip-target="ng_disabled" >ng-disabled<br /><x class="cardListElementSubText">Test ng-disabled</x></td>
+            </tr>
+          </table>
+        </li>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle" flip-target="ng_click" >ng-Click<br /><x class="cardListElementSubText">Test ng-Click</x></td>
+            </tr>
+          </table>
+        </li>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle" flip-target="filters" >Filters<br /><x class="cardListElementSubText">Test filters</x></td>
+            </tr>
+          </table>
+        </li>
+      </ul>
+
+    </content>
+    <cbl></cbl>
+    <cbr></cbr>
+
+</face>
+<face id="ng_repeat" face="back" controller="_angular.repeatCtrl">
+    <ctl>ng-repeat</ctl>
+    <ctr class="gui" flip-target="close">x</ctr>
+
+    <content>
+
+
+    <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+
+    <tr>
+       <td class="cardFormElementTitle">Raw Data</td>
+    </tr>
+
+     <tr>
+       <td colspan="2" class="cardFormElementContent">
+        <div  class="cardInlay" >
+         {{names}}
+        </div>
+       </td>
+     </tr>
+  </table>
+  <br>
+
+  <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+
+    <tr>
+       <td class="cardFormElementTitle">Repeat</td>
+    </tr>
+
+     <tr>
+       <td colspan="2" class="cardFormElementContent">
+        <div  class="cardInlay" >
+         <ul>
+          <li ng-repeat="x in names">
+            {{x}}
+          </li>
+         </ul>
+        </div>
+       </td>
+     </tr>
+  </table>
+  <br>
+  </content>
+  <cbl></cbl>
+  <cbr></cbr>
+
+</face>
+<face id="ng_show" face="back" controller="_angular.boolCtrl">
+    <ctl>ng-show</ctl>
+    <ctr class="gui" flip-target="close">x</ctr>
+
+    <content>
+
+      <ul>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle"  ng-Click="bool = (bool ? false : true );" >Toggle Show data<br /><x class="cardListElementSubText">Show = {{bool}}</x></td>
+            </tr>
+          </table>
+        </li>
+      </ul>
+
+      <br>
+      <table class="cardFormContainer" cellspacing='0' cellpadding='0' ng-show='bool'>
+
+          <tr>
+             <td class="cardFormElementTitle">Show Data</td>
+          </tr>
+
+           <tr>
+             <td colspan="2" class="cardFormElementContent">
+              <div  class="cardInlay" >
+                PUT DATA HERE 
+              </div>
+             </td>
+           </tr>
+        </table>
+
+
+    </content>
+    <cbl></cbl>
+    <cbr></cbr>
+
+</face>
+<face id="ng_hide" face="back" controller="_angular.boolCtrl">
+    <ctl>ng-hide</ctl>
+    <ctr class="gui" flip-target="close">x</ctr>
+
+    <content>
+
+      <ul>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle"  ng-Click="bool = (bool ? false : true );" >Toggle Hide data<br /><x class="cardListElementSubText">Hide = {{bool}}</x></td>
+            </tr>
+          </table>
+        </li>
+      </ul>
+
+      <br>
+      <table class="cardFormContainer" cellspacing='0' cellpadding='0' ng-hide='bool'>
+
+          <tr>
+             <td class="cardFormElementTitle">Hide Data</td>
+          </tr>
+
+           <tr>
+             <td colspan="2" class="cardFormElementContent">
+              <div  class="cardInlay" >
+                PUT DATA HERE 
+              </div>
+             </td>
+           </tr>
+        </table>
+
+
+    </content>
+    <cbl></cbl>
+    <cbr></cbr>
+
+</face>
+<face id="ng_if" face="back" controller="_angular.boolCtrl">
+    <ctl>ng-if</ctl>
+    <ctr class="gui" flip-target="close">x</ctr>
+
+    <content>
+
+      <ul>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle"  ng-Click="bool = (bool ? false : true );" >Toggle If data<br /><x class="cardListElementSubText">IF = {{bool}}</x></td>
+            </tr>
+          </table>
+        </li>
+      </ul>
+
+      <br>
+      <table class="cardFormContainer" cellspacing='0' cellpadding='0' ng-if='bool'>
+
+          <tr>
+             <td class="cardFormElementTitle">If Data</td>
+          </tr>
+
+           <tr>
+             <td colspan="2" class="cardFormElementContent">
+              <div  class="cardInlay" >
+                PUT DATA HERE
+              </div>
+             </td>
+           </tr>
+        </table>
+
+
+    </content>
+    <cbl></cbl>
+    <cbr></cbr>
+
+</face>
+<face id="ng_disabled" face="back" controller="_angular.boolCtrl">
+    <ctl>ng-disabled</ctl>
+    <ctr class="gui" flip-target="close">x</ctr>
+
+    <content>
+
+      <ul>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle"  ng-Click="bool = (bool ? false : true );" >Toggle Disabled data<br /><x class="cardListElementSubText">Disabled = {{bool}}</x></td>
+            </tr>
+          </table>
+        </li>
+      </ul>
+
+      <br>
+      <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+
+          <tr>
+             <td class="cardFormElementTitle">Disabled Data</td>
+          </tr>
+
+           <tr>
+             <td colspan="2" class="cardFormElementContent">
+              <div  class="cardInlay" >
+                <button onClick="alert('Button Clicked')" ng-disabled="bool">Button</button>
+              </div>
+             </td>
+           </tr>
+        </table>
+
+
+    </content>
+    <cbl></cbl>
+    <cbr></cbr>
+
+</face>
+<face id="ng_click" face="back" controller="_angular.clickCtrl">
+    <ctl>ng-Click</ctl>
+    <ctr class="gui" flip-target="close">x</ctr>
+
+    <content>
+
+      <ul>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle"  ng-Click="num = num + 1;" >Test ng-Click<br /><x class="cardListElementSubText">Increase Number</x></td>
+            </tr>
+          </table>
+        </li>
+      </ul>
+
+      <br>
+      <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+
+          <tr>
+             <td class="cardFormElementTitle">Number</td>
+          </tr>
+
+           <tr>
+             <td colspan="2" class="cardFormElementContent">
+              <div  class="cardInlay" >
+                {{num}}
+              </div>
+             </td>
+           </tr>
+        </table>
+
+
+    </content>
+    <cbl></cbl>
+    <cbr></cbr>
+
+</face>
+<face id="filters" face="back" controller="_angular.filterCtrl" >
+    <ctl>Filters</ctl>
+    <ctr class="gui" flip-target="close">x</ctr>
+
+    <content>
+
+      <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+          <tr>
+             <td class="cardFormElementTitle">Input Data</td>
+          </tr>
+
+           <tr>
+             <td colspan="2" class="cardFormElementContent">
+              <div  class="cardInlay" >
+                <input type='text' ng-model='filterData'/>
+              </div>
+             </td>
+           </tr>
+        </table>
+      <br>
+      <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+
+          <tr>
+             <td class="cardFormElementTitle">Raw Data</td>
+          </tr>
+
+           <tr>
+             <td colspan="2" class="cardFormElementContent">
+              <div  class="cardInlay" style="text-transform: none !important">
+                {{filterData}}
+              </div>
+             </td>
+           </tr>
+        </table>
+        <br>
+      <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+
+          <tr>
+             <td class="cardFormElementTitle">Uppercase</td>
+          </tr>
+
+           <tr>
+             <td colspan="2" class="cardFormElementContent">
+              <div  class="cardInlay" style="text-transform: none !important">
+                {{filterData | uppercase}}
+              </div>
+             </td>
+           </tr>
+        </table>
+         <br>
+      <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+
+          <tr>
+             <td class="cardFormElementTitle">Lowercase</td>
+          </tr>
+
+           <tr>
+             <td colspan="2" class="cardFormElementContent">
+              <div  class="cardInlay" style="text-transform: none !important">
+                {{filterData | lowercase}}
+              </div>
+             </td>
+           </tr>
+        </table>
+
+
+    </content>
+    <cbl></cbl>
+    <cbr></cbr>
+
+</face>
+</card>
