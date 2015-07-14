@@ -216,6 +216,14 @@
               ],
               "layout": "<table width='100%'><tr><td class='_multipleCard1' width='50%'></td><td class='_multipleCard2' width='50%'></td></tr></table>",
               "default": false
+            },
+            "angular": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Angular",
+                "subtext": "Angular Functions",
+                "views": ["angular"],
+                "default": false
             }
 
         },
@@ -335,6 +343,14 @@
               ],
               "layout": "<table width='100%'><tr><td class='_multipleCard1' width='50%'></td><td class='_multipleCard2' width='50%'></td></tr></table>",
               "default": false
+            },
+            "angular": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Angular",
+                "subtext": "Angular Functions",
+                "views": ["angular"],
+                "default": false
             }
             
 
