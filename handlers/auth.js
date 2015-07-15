@@ -4,10 +4,10 @@ var _log = require('../provider/lib/log');
 
 exports.req = function (obj, cb) {
 
-
-	   obj.RESPONSE = '12345abcdef';
-		 cb(obj);
-		 return;
+		_log.d("LOGIN AUTH HANDLER CALLED: " + JSON.stringify(obj))
+	    obj.RESPONSE = true;
+		cb(obj);
+		return;
 
 /*
 		community.loginToken(obj.credentials.username, obj.credentials.password, function(token, response) {

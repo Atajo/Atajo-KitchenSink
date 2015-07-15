@@ -40,7 +40,6 @@ _jobQueue = {
     sendUnknownJob : function(name,description,allowDuplicate,clearOnDone,lockUI,cb)
     {
 
-      if(typeof code == 'undefined') {  code = 0; }
       if(typeof name == 'undefined') {  name = "JOB NAME " + code; }
       if(typeof description == 'undefined') {  description = "JOB DESC "; }
       if(typeof allowDuplicate == 'undefined') {  allowDuplicate = false; }
