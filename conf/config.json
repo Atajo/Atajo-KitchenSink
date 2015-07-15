@@ -58,24 +58,24 @@
               "showBubble" : true
             },
 
-            "login": {
+      "login": {
 
-                        "enabled"  : false,
-                        "heading"  : "Login",
-                        "fields": [
-                            {
-                                "name": "username",
-                                "label": "Username",
-                                "type": "text"
-                            },
-                            {
-                                "name": "password",
-                                "label": "Password",
-                                "type": "password"
-                            }
-                        ]
+                  "enabled"  : false,
+                  "heading"  : "Login",
+                  "fields": [
+                      {
+                          "name": "username",
+                          "label": "Username",
+                          "type": "text"
+                      },
+                      {
+                          "name": "password",
+                          "label": "Password",
+                          "type": "password"
+                      }
+                  ]
 
-                    },
+              },
 
 
       "menuIcon"       : "&#61497;",
@@ -246,6 +246,14 @@
                 "subtext": "Scroll Test",
                 "views": ["scrollTest"],
                 "default": false
+            },
+            "loginTest": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Login Test",
+                "subtext": "Login Test",
+                "views": ["loginTest"],
+                "default": false
             }
 
         },
@@ -388,6 +396,14 @@
                 "label": "Scroll Test",
                 "subtext": "Scroll Test",
                 "views": ["scrollTest"],
+                "default": false
+            },
+            "loginTest": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Login Test",
+                "subtext": "Login Test",
+                "views": ["loginTest"],
                 "default": false
             }
         }
