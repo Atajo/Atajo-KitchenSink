@@ -1,65 +1,63 @@
 <card id="services" fill="true" >
-
-<face id="servicesFront" settings="default:true" controller="_services.Ctrl">
+  <face id="servicesFront" settings="default:true,refresh:'date'" controller="_services.Ctrl">
     <ctl>Services</ctl>
-    <ctr>
-    </ctr>
-
+    <ctr></ctr>
     <content>
       <div>
         <ul>
           <li>
             <center>
               <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-
-                  <tr>
-                     <td class="cardFormElementTitle">Date</td>
-
-                    </td>
-                  </tr>
-
-                   <tr>
-                     <td colspan="2" class="cardFormElementContent">
-                      <div  class="cardInlay">
-                       <table>
+                <tr>
+                  <td class="cardFormElementTitle">Date</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="cardFormElementContent">
+                    <div  class="cardInlay">
+                      <table>
                         <tr>
-                        <td>
-                          {{data.date}}
-                        </td>
+                          <td>
+                            {{data.date}}
+                          </td>
                         </tr>
-                        </div>
-                      </table>
-                     </td>
-                   </tr>
-                </table>
-
-                <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-
-                  <tr>
-                     <td class="cardFormElementTitle">Note</td>
-                    </td>
-                  </tr>
-                   <tr>
-                     <td colspan="2" class="cardFormElementContent">
-                      <div  class="cardInlay">
-                       <table>
+                      </div>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              <br>
+              <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+                <tr>
+                  <td class="cardFormElementTitle">Note</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="cardFormElementContent">
+                    <div  class="cardInlay">
+                      <table style="text-transform: none !important">
                         <tr>
-                        <td>
-                        	Sync data to update date.
-                        </td>
+                          <td>
+                            Sync Data service to update date, or pull screen down to refresh data from service.<br><br>
+                            To enable this, add refresh and the service name to the settings attribute on the face element. <br>
+                            eg.
+                            <br>
+                            <br>
+                            &lt;face id="servicesFront" settings="default:true,refresh:'date'" &gt;
+                            <br>
+                            <br>
+                            'date' is the service name here.
+                          </td>
                         </tr>
-                        </div>
                       </table>
-                     </td>
-                   </tr>
-                </table>
-             </center>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </center>
           </li>
         </ul>
       </div>
-
     </content>
     <cbl></cbl>
     <cbr></cbr>
-</face>
+  </face>
 </card>

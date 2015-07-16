@@ -39,12 +39,25 @@ _pinLock = {
     {
     	try
     	{
+            _pin.isMulti = false;
             _pin.shouldLoadDefaultView = false;
     		_pin.captureCurrPin();
     	}catch(err)
     	{
     		alert(err);
     	}
+    },
+    showMultiPinScreen : function()
+    {
+        try
+        {
+            _pin.isMulti = true;
+            _pin.shouldLoadDefaultView = false;
+            _pin.captureCurrPin();
+        }catch(err)
+        {
+            alert(err);
+        }
     }
 
 };;;

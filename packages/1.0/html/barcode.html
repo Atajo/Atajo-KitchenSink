@@ -1,114 +1,90 @@
 <card id="barcode" fill="true" >
-
-<face id="barcodeFront" settings="default:true" controller="_signature.Ctrl">
+  <face id="barcodeFront" settings="default:true" controller="_signature.Ctrl">
     <ctl>Barcode Scanner</ctl>
-    <ctr>
-    </ctr>
-
+    <ctr></ctr>
     <content>
       <div>
         <ul>
           <li>
             <center>
               <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-
-                  <tr>
-                     <td class="cardFormElementTitle">Text</td>
-
-                    </td>
-                  </tr>
-
-                   <tr>
-                     <td colspan="2" class="cardFormElementContent">
-                      <div  class="cardInlay">
-                       <table>
+                <tr>
+                  <td class="cardFormElementTitle">Text</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="cardFormElementContent">
+                    <div  class="cardInlay">
+                      <table>
                         <tr>
-                        <td>
-                          {{barcode.text}}
-                        </td>
+                          <td>
+                            {{barcode.text}}
+                          </td>
                         </tr>
-                        </div>
                       </table>
-                     </td>
-                   </tr>
-                </table>
-
-                <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-
-                  <tr>
-                     <td class="cardFormElementTitle">Format</td>
-
-                    </td>
-                  </tr>
-
-                   <tr>
-                     <td colspan="2" class="cardFormElementContent">
-                      <div  class="cardInlay">
-                       <table>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+                <tr>
+                  <td class="cardFormElementTitle">Format</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="cardFormElementContent">
+                    <div  class="cardInlay">
+                      <table>
                         <tr>
-                        <td>
-                          {{barcode.format}}
-                        </td>
+                          <td>
+                            {{barcode.format}}
+                          </td>
                         </tr>
-                        </div>
                       </table>
-                     </td>
-                   </tr>
-                </table>
-
-                <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-
-                  <tr>
-                     <td class="cardFormElementTitle">Cancelled</td>
-
-                    </td>
-                  </tr>
-
-                   <tr>
-                     <td colspan="2" class="cardFormElementContent">
-                      <div  class="cardInlay">
-                       <table>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+                <tr>
+                  <td class="cardFormElementTitle">Cancelled</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="cardFormElementContent">
+                    <div  class="cardInlay">
+                      <table>
                         <tr>
-                        <td>
-                          {{barcode.cancelled}}
-                        </td>
+                          <td>
+                            {{barcode.cancelled}}
+                          </td>
                         </tr>
-                        </div>
                       </table>
-                     </td>
-                   </tr>
-                </table>
-
-                <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-
-                  <tr>
-                     <td class="cardFormElementTitle">Raw Data</td>
-
-                    </td>
-                  </tr>
-
-                   <tr>
-                     <td colspan="2" class="cardFormElementContent">
-                      <div  class="cardInlay">
-                       <table>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+              <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+                <tr>
+                  <td class="cardFormElementTitle">Raw Data</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="cardFormElementContent">
+                    <div  class="cardInlay">
+                      <table>
                         <tr>
-                        <td>
-                          {{barcode}}
-                        </td>
+                          <td>
+                            {{barcode}}
+                          </td>
                         </tr>
-                        </div>
                       </table>
-                     </td>
-                   </tr>
-                </table>
-
-             </center>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </center>
           </li>
         </ul>
       </div>
-
     </content>
     <cbl id="btnAdd"  onClick="_barcode.scanBarcode()">Scan Barcode</cbl>
     <cbr></cbr>
-</face>
+  </face>
 </card>

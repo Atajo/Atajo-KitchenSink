@@ -1,84 +1,91 @@
 <card id="multipleCard1" fill="true" >
-
-<face id="multipleCard1Front" settings="default:true" controller="_multipleCard1.Ctrl">
+  <face id="multipleCard1Front" settings="default:true" controller="_multipleCard1.Ctrl">
     <ctl>Multiple Cards:Card1</ctl>
     <ctr>
     </ctr>
-
     <content>
       <div>
-            <center>
-              <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+        <center>
+          <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+            <tr>
+              <td class="cardFormElementTitle">Card1:Face Front</td>
+            </tr>
+            <tr>
+              <td colspan="2" class="cardFormElementContent">
+                <div  class="cardInlay">
+                  <table>
+                    <tr>
+                      <td>
+                        This is Card1 Face Front
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="txtTitle" flip-target="multipleCard1Back" >Flip face<br /><x class="cardListElementSubText">Flip to back face</x></td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+            <tr>
+              <td class="cardFormElementTitle">Send data to Card2</td>
+            </tr>
+            <tr>
+              <td colspan="2" class="cardFormElementContent">
+                <div  class="cardInlay">
+                  <table>
 
-                  <tr>
-                     <td class="cardFormElementTitle">Card1:Face Front</td>
-                    </td>
-                  </tr>
-
-                   <tr>
-                     <td colspan="2" class="cardFormElementContent">
-                       <div  class="cardInlay">
-                       <table>
-
-                        <tr>
-                        <td>
-                        	This is Card1 Face Front
-                        </td>
-                        </tr>
-                        <tr>
-                        <td class="txtTitle" flip-target="multipleCard1Back" >Flip face<br /><x class="cardListElementSubText">Flip to back face</x></td>
-                        </tr>
-                      </table>
-                  	  </div>
-                     </td>
-                   </tr>
-                </table>
-             </center>
+                    <tr>
+                      <td>
+                        <input type="text" id="jobDesc" ng-model="card1.data"  />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="txtTitle" onclick="_multipleCard1.sendMessage();" >Send Data<br /><x class="cardListElementSubText">Click to send data.</x></td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </center>
       </div>
-
     </content>
     <cbl></cbl>
     <cbr></cbr>
-</face>
-
-<face id="multipleCard1Back" >
+  </face>
+  <face id="multipleCard1Back" >
     <ctl>Multiple Cards:Card1</ctl>
-	<ctr class="gui" flip-target="close">x</ctr>
-
+    <ctr class="gui" flip-target="close">x</ctr>
     <content>
       <div>
-            <center>
-              <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-
-                  <tr>
-                     <td class="cardFormElementTitle">Card1:Face Back</td>
-                    </td>
-                  </tr>
-
-                   <tr>
-                     <td colspan="2" class="cardFormElementContent">
-                       <div  class="cardInlay">
-                       <table>
-
-                        <tr>
-                        <td>
-                        	This is Card1 Face Back
-                        </td>
-                        </tr>
-                        <tr>
-                        <td class="txtTitle" flip-target="multipleCard1Front" >Flip face<br /><x class="cardListElementSubText">Flip to front face</x></td>
-                        </tr>
-                      </table>
-                  	  </div>
-                     </td>
-                   </tr>
-                </table>
-             </center>
+        <center>
+          <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+            <tr>
+              <td class="cardFormElementTitle">Card1:Face Back</td>
+            </tr>
+            <tr>
+              <td colspan="2" class="cardFormElementContent">
+                <div  class="cardInlay">
+                  <table>
+                    <tr>
+                      <td>
+                        This is Card1 Face Back
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="txtTitle" flip-target="multipleCard1Front" >Flip face<br /><x class="cardListElementSubText">Flip to front face</x></td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </center>
       </div>
-
     </content>
     <cbl></cbl>
     <cbr></cbr>
-</face>
-
+  </face>
 </card>

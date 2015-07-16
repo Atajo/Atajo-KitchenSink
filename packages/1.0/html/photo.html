@@ -1,44 +1,38 @@
 <card id="photo" fill="true" >
-
-<face id="photoFront" settings="default:true" controller="_photo.Ctrl">
+  <face id="photoFront" settings="default:true" controller="_photo.Ctrl">
     <ctl>Photo!</ctl>
     <ctr>
     </ctr>
-
     <content>
       <div>
         <ul>
           <li ng-repeat="photo in photos">
             <center>
               <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-
-                  <tr>
-                     <td class="cardFormElementTitle">PHOTO {{$index + 1}}</td>
-                     <td class="cardFormElementDesc" idx="{{$index}}" onClick="_photo.removePhoto($(this).attr('idx'));">DELETE&nbsp;<x class="gui-extra">&#xf00d;</x>
-
-                    </td>
-                  </tr>
-
-                   <tr>
-                     <td colspan="2" class="cardFormElementContent">
-                       <table>
-                        <tr>
+                <tr>
+                  <td class="cardFormElementTitle">PHOTO {{$index + 1}}</td>
+                  <td class="cardFormElementDesc" idx="{{$index}}" onClick="_photo.removePhoto($(this).attr('idx'));">DELETE&nbsp;<x class="gui-extra">&#xf00d;</x>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="cardFormElementContent">
+                    <table>
+                      <tr>
                         <td>
-                            <img style="max-width:100%;" src="{{photo.img}}"  />
+                          <img style="max-width:100%;" src="{{photo.img}}"  />
                         </td>
-                        </tr>
-                      </table>
-                     </td>
-                   </tr>
-                </table>
-             </center>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </center>
           </li>
           <placeholder ng-show="!photos.length">NO PHOTOS</placeholder>
         </ul>
       </div>
-
     </content>
     <cbl id="btnAdd"  onClick="_photo.capturePhoto();">ADD PHOTO</cbl>
     <cbr></cbr>
-</face>
+  </face>
 </card>

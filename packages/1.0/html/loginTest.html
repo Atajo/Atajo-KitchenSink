@@ -1,93 +1,189 @@
 <card id="loginTest" fill="true" >
 
-<face id="loginTestFront" settings="default:true" controller="_loginTest.Ctrl">
+  <face id="loginTestFront" settings="default:true" controller="_loginTest.Ctrl">
     <ctl>Login Screen</ctl>
-    <ctr>
-    </ctr>
-
+    <ctr></ctr>
     <content>
       <div>
         <ul>
-        <li class="cardListElement" ng-show="username !== undefined">
+          <li class="cardListElement" ng-show="username !== undefined">
+            <table>
+              <tr>
+                <td class="txtTitle"  >Current User:<br /><x class="cardListElementSubText">{{username}}</x></td>
+              </tr>
+            </table>
+          </li>
+          <li class="cardListElement">
+            <table>
+              <tr>
+                <td class="txtTitle" flip-target="loginSingle"  >Single User Login<br /><x class="cardListElementSubText">Single User Login</x></td>
+              </tr>
+            </table>
+          </li>
+          <li class="cardListElement">
+            <table>
+              <tr>
+                <td class="txtTitle" flip-target="loginMulti" >Multi User Login<br /><x class="cardListElementSubText">Multi User Login</x></td>
+              </tr>
+            </table>
+          </li>
+        </ul>
+      </div>
+    </content>
+    <cbl onClick="app.doLogout();">Logout</cbl>
+    <cbr></cbr>
+  </face>
+  <face id="loginMulti" controller="_loginTest.Ctrl">
+    <ctl>Multi User</ctl>
+    <ctr></ctr>
+    <content>
+      <ul>
+        <li class="cardListElement" ng-show="multi.credentials">
           <table>
-           <tr>
-              <td class="txtTitle"  >Current User:<br /><x class="cardListElementSubText">{{username}}</x></td>
+            <tr>
+              <td class="txtTitle"  >Current User:<br /><x class="cardListElementSubText">{{multi.credentials.username}}</x></td>
             </tr>
           </table>
         </li>
-        
+
         <li class="cardListElement">
           <table>
             <tr>
-              <td class="txtTitle" onClick="_loginTest.showLoginScreen()" >Show Single Login Screen<br /><x class="cardListElementSubText">Show Login Screen</x></td>
-            </tr>
-          </table>
-        </li>
-        <li class="cardListElement">
-          <table>
-           <tr>
-              <td class="txtTitle" onClick="_loginTest.showMultiLoginScreen()" >Show Multiple Login Screen<br /><x class="cardListElementSubText">Show Multiple Login Screen</x></td>
+              <td class="txtTitle" onClick="_loginTest.showMultiLoginScreen()" >Show Multi User Login Screen<br /><x class="cardListElementSubText">Show Login Screen</x></td>
             </tr>
           </table>
         </li>
         <li class="cardListElement" ng-show="multi.credentials">
           <table>
-           <tr>
-              <td class="txtTitle" onClick="_loginTest.logout()">Logout Multiple User:<br /><x class="cardListElementSubText">User: {{username}}</x></td>
+            <tr>
+              <td class="txtTitle" onClick="_loginTest.swapUser()" >Swap User<br /><x class="cardListElementSubText">Swap current user</x></td>
             </tr>
           </table>
         </li>
-        <br>
-          <li>
-            <center>
-              <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-
+        <li class="cardListElement" ng-show="multi.credentials" >
+          <table>
+            <tr>
+              <td class="txtTitle" onClick="_loginTest.logout()">Logout User<br /><x class="cardListElementSubText">User: {{username}}</x></td>
+            </tr>
+          </table>
+        </li><li class="cardListElement" ng-show="multi.credentials" >
+        <table>
+          <tr>
+            <td class="txtTitle" onClick="_loginTest.logoutAll()">Logout All Users<br /><x class="cardListElementSubText">Logout All Users</x></td>
+          </tr>
+        </table>
+      </li>
+      <br>
+      <li>
+        <center>
+          <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+            <tr>
+              <td class="cardFormElementTitle">Note</td>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="cardFormElementContent">
+              <div  class="cardInlay">
+                <table style="text-transform: none !important">
                   <tr>
-                     <td class="cardFormElementTitle">Note</td>
-
+                    <td>
+                      To enable the Multi login screen on startup, change the enabled entry in login in conf/config.json to true, and to disable login, change it to false. Add a type element and set it as multi.
+                      <br><br>
+                      "login": {<br>
+                      "type": "multi",<br>
+                      "enabled": true,<br>
+                      "heading": "Login",<br>
+                      "fields": [<br>
+                      {<br>
+                      "name": "username",<br>
+                      "label": "Username",<br>
+                      "type": "text"<br>
+                    },<br>
+                    {<br>
+                    "name": "password",<br>
+                    "label": "Password",<br>
+                    "type": "password"<br>
+                        }<br>
+                        ]<br>
+                      },<br>
                     </td>
                   </tr>
-
-                   <tr>
-                     <td colspan="2" class="cardFormElementContent">
-                      <div  class="cardInlay">
-                       <table style="text-transform: none !important">
+                </table>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </center>
+      </li>
+      </ul>
+    </content>
+    <cbl></cbl>
+    <cbr></cbr>
+  </face>
+  <face id="loginSingle" controller="_loginTest.Ctrl">
+    <ctl>Single User</ctl>
+    <ctr></ctr>
+      <content>
+        <ul>
+          <li class="cardListElement" ng-show="username !== undefined">
+            <table>
+              <tr>
+                <td class="txtTitle"  >Current User:<br /><x class="cardListElementSubText">{{username}}</x></td>
+              </tr>
+            </table>
+          </li>
+          <li class="cardListElement">
+            <table>
+              <tr>
+               <td class="txtTitle" onClick="_loginTest.showLoginScreen()" >Show Login Screen<br /><x class="cardListElementSubText">Show Login Screen</x></td>
+              </tr>
+            </table>
+          </li>
+          <br>
+            <li>
+            <center>
+              <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+                <tr>
+                  <td class="cardFormElementTitle">Note</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="cardFormElementContent">
+                    <div  class="cardInlay">
+                      <table style="text-transform: none !important">
                         <tr>
-                        <td>
-                        	To enable the login screen on startup, change the enabled entry in login in conf/config.json to true, and to disable it, change it to false.
-                          <br><br>
-        	"login": {<br>
-<br>
-                  "enabled"  : true,<br>
-                  "heading"  : "Login",<br>
-                  "fields": [<br>
-                      {<br>
-                          "name": "username",<br>
-                          "label": "Username",<br>
-                          "type": "text"<br>
-                      },<br>
-                      {<br>
+                          <td>
+                            To enable the login screen on startup, change the enabled entry in login in conf/config.json to true, and to disable it, change it to false.
+                            <br><br>
+                            "login": {<br>
+                            <br>
+                            "enabled"  : true,<br>
+                            "heading"  : "Login",<br>
+                            "fields": [<br>
+                            {<br>
+                            "name": "username",<br>
+                            "label": "Username",<br>
+                            "type": "text"<br>
+                          },<br>
+                          {<br>
                           "name": "password",<br>
                           "label": "Password",<br>
                           "type": "password"<br>
-                      }<br>
-                  ]<br>
-<br>
-              },<br>
+                        }<br>
+                        ]<br>
+                        <br>
+                      },<br>
                         </td>
-                        </tr>
-                      </table>
-                     </td>
-                   </tr>
-                 </div>
-                </table>
-             </center>
-          </li>
-        </ul>
-      </div>
-
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </center>
+        </li>
+      </ul>
     </content>
-    <cbl onClick="app.doLogout();">Logout</cbl>
+    <cbl></cbl>
     <cbr></cbr>
-</face>
+  </face>
 </card>

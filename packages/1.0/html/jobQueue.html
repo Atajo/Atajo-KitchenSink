@@ -1,12 +1,9 @@
 <card id="jobQueue" fill="true" >
 
-<face id="jobQueueFront" settings="default:true" controller="_jobQueue.Ctrl">
+  <face id="jobQueueFront" settings="default:true" controller="_jobQueue.Ctrl">
     <ctl>Job Queue</ctl>
     <ctr>
     </ctr>
-
-
-
     <content>
       <ul>
         <li class="cardListElement">
@@ -23,13 +20,6 @@
             </tr>
           </table>
         </li>
-        <!-- <li class="cardListElement">
-          <table>
-            <tr>
-              <td class="txtTitle" flip-target="jobQueue_LockUI" >Lock UI Jobs<br /><x class="cardListElementSubText">Test Lock UI</x></td>
-            </tr>
-          </table>
-        </li> -->
         <li class="cardListElement">
           <table>
             <tr>
@@ -38,215 +28,223 @@
           </table>
         </li>
       </ul>
-
+      <br>
+      <br>
+      <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+        <tr>
+          <td class="cardFormElementTitle">Note</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <table style="text-transform: none !important">
+                <tr>
+                  <td>
+                    To push data to a job queue, use the following code.
+                    <br>
+                    <br>
+                    jobData = { action:'jobQueue', data: 'any object here'};<br>
+                    <br>
+                    JOB = {<br>
+                    jobName: "Job name",<br>
+                    jobDesc: "Job Description",<br>
+                    data: jobData,<br>
+                    allowDuplicate: true,<br>
+                    clearOnDone: false,<br>
+                    lockUI: false<br>
+                  };<br>
+                  <br>
+                  jobQueue.add(JOB);<br>
+                  <br>
+                  The handlers name is 'jobQueue'.<br>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </table>
     </content>
     <cbl></cbl>
-    <cbr><x >TODO</x></cbr>
-
-</face>
-<face id="jobQueue_Sing" face="back" >
+    <cbr></cbr>
+  </face>
+  <face id="jobQueue_Sing" face="back" >
     <ctl>Single Job Queue</ctl>
     <ctr class="gui" flip-target="close">x</ctr>
-
     <content>
-
       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+        <tr>
+          <td class="cardFormElementTitle">Single Jobs</td>
+          <td class="cardFormElementDesc">Click to add to Job Queue</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
 
-                  <tr>
-                     <td class="cardFormElementTitle">Single Jobs</td>
-                     <td class="cardFormElementDesc">Click to add to Job Queue</td>
-
-                  </tr>
-
-                   <tr>
-                    <td colspan="2" class="cardFormElementContent">
-                      <div  class="cardInlay">
-
-                     <ul>
-        <li class="cardListElement">
-         <table>
-          <tr>
-            <td class="txtTitle" onClick="_jobQueue.sendJob(0,'Error','Return Code: 0',false,false);">Error<br/>
-              <x class="cardListElementSubText">Return Code 0 </x>
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="_jobQueue.sendJob(1,'White Tick','Return Code: 1',false,false);">White Tick<br/>
-              <x class="cardListElementSubText">Return Code 1 </x>
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="_jobQueue.sendJob(10,'Green Tick','Return Code: 10',false,false);">Green Tick<br/>
-              <x class="cardListElementSubText">Return Code 10 </x>
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="_jobQueue.sendJob(10,'Green Tick Clear on Done','Return Code: 10',false,true);">Green Tick<br/>
-              <x class="cardListElementSubText">Return Code 10 Clear On Done</x>
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="_jobQueue.sendJob(-1,'Amber','No Return Code',false,false);">Amber<br/>
-              <x class="cardListElementSubText">Return Code -1 </x>
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="_jobQueue.sendUnknownJob('Unknown Handler','Handler does not exist',false,false);">Unknown Handler<br/>
-              <x class="cardListElementSubText">Handler does not exist </x>
-            </td>
-          </tr>
-         </table>
-        </li>
+              <ul>
+                <li class="cardListElement">
+                  <table>
+                    <tr>
+                      <td class="txtTitle" onClick="_jobQueue.sendJob(0,'Error','Return Code: 0',false,false);">Error<br/>
+                        <x class="cardListElementSubText">Return Code 0 </x>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="txtTitle" onClick="_jobQueue.sendJob(1,'White Tick','Return Code: 1',false,false);">White Tick<br/>
+                        <x class="cardListElementSubText">Return Code 1 </x>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="txtTitle" onClick="_jobQueue.sendJob(10,'Green Tick','Return Code: 10',false,false);">Green Tick<br/>
+                        <x class="cardListElementSubText">Return Code 10 </x>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="txtTitle" onClick="_jobQueue.sendJob(10,'Green Tick Clear on Done','Return Code: 10',false,true);">Green Tick<br/>
+                        <x class="cardListElementSubText">Return Code 10 Clear On Done</x>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="txtTitle" onClick="_jobQueue.sendJob(-1,'Amber','No Return Code',false,false);">Amber<br/>
+                        <x class="cardListElementSubText">Return Code -1 </x>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="txtTitle" onClick="_jobQueue.sendUnknownJob('Unknown Handler','Handler does not exist',false,false);">Unknown Handler<br/>
+                        <x class="cardListElementSubText">Handler does not exist </x>
+                      </td>
+                    </tr>
+                  </table>
+                </li>
               </ul>
-                      </div>
-                     </td>
-                   </tr>
-
-              </table><br />
-
+            </div>
+          </td>
+        </tr>
+      </table><br />
     </content>
     <cbl></cbl>
     <cbr><x >TODO</x></cbr>
-
-</face>
-<face id="jobQueue_Dup" face="back" >
+  </face>
+  <face id="jobQueue_Dup" face="back" >
     <ctl>Duplicate Job Queue</ctl>
     <ctr class="gui" flip-target="close">x</ctr>
-
     <content>
       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-
-                  <tr>
-                     <td class="cardFormElementTitle">Add Jobs</td>
-                     <td class="cardFormElementDesc">Click to add to Job Queue</td>
-
-                  </tr>
-
-                   <tr>
-                    <td colspan="2" class="cardFormElementContent">
-                      <div  class="cardInlay">
-
-                      <ul>
-        <li class="cardListElement">
-         <table>
-          <tr>
-            <td class="txtTitle" onClick="_jobQueue.sendJob(0,'Error','Return Code: 0',true,false);">Error<br/>
-              <x class="cardListElementSubText">Return Code 0 </x>
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="_jobQueue.sendJob(1,'White Tick','Return Code: 1',true,false);">White Tick<br/>
-              <x class="cardListElementSubText">Return Code 1 </x>
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="_jobQueue.sendJob(10,'Green Tick','Return Code: 10',true,false);">Green Tick<br/>
-              <x class="cardListElementSubText">Return Code 10 </x>
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="_jobQueue.sendJob(10,'Green Tick Clear','Return Code: 10',true,true);">Green Tick<br/>
-              <x class="cardListElementSubText">Return Code 10 Dissapear</x>
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="_jobQueue.sendJob(-1,'Amber','No Return Code',true,false);">Amber<br/>
-              <x class="cardListElementSubText">Return Code -1 </x>
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="_jobQueue.sendUnknownJob('Unknown Handler','Handler does not exist',true,false);">Unknown Handler<br/>
-              <x class="cardListElementSubText">Handler does not exist </x>
-            </td>
-          </tr>
-         </table>
-        </li>
-      </ul>
-                      </div>
-                     </td>
-                   </tr>
-
-              </table><br />
-
-
-
+        <tr>
+          <td class="cardFormElementTitle">Add Jobs</td>
+          <td class="cardFormElementDesc">Click to add to Job Queue</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <ul>
+                <li class="cardListElement">
+                  <table>
+                    <tr>
+                      <td class="txtTitle" onClick="_jobQueue.sendJob(0,'Error','Return Code: 0',true,false);">Error<br/>
+                        <x class="cardListElementSubText">Return Code 0 </x>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="txtTitle" onClick="_jobQueue.sendJob(1,'White Tick','Return Code: 1',true,false);">White Tick<br/>
+                        <x class="cardListElementSubText">Return Code 1 </x>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="txtTitle" onClick="_jobQueue.sendJob(10,'Green Tick','Return Code: 10',true,false);">Green Tick<br/>
+                        <x class="cardListElementSubText">Return Code 10 </x>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="txtTitle" onClick="_jobQueue.sendJob(10,'Green Tick Clear','Return Code: 10',true,true);">Green Tick<br/>
+                        <x class="cardListElementSubText">Return Code 10 Dissapear</x>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="txtTitle" onClick="_jobQueue.sendJob(-1,'Amber','No Return Code',true,false);">Amber<br/>
+                        <x class="cardListElementSubText">Return Code -1 </x>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="txtTitle" onClick="_jobQueue.sendUnknownJob('Unknown Handler','Handler does not exist',true,false);">Unknown Handler<br/>
+                        <x class="cardListElementSubText">Handler does not exist </x>
+                      </td>
+                    </tr>
+                  </table>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </table><br />
     </content>
     <cbl></cbl>
-    <cbr><x >TODO</x></cbr>
-
-</face>
-
-<face id="jobQueue_Custom" face="back" controller="_jobQueue.Custom_Ctrl">
+    <cbr></cbr>
+  </face>
+  <face id="jobQueue_Custom" face="back" controller="_jobQueue.Custom_Ctrl">
     <ctl>Custom Job Queue</ctl>
     <ctr class="gui" flip-target="close">x</ctr>
-
     <content>
       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-
-                  <tr>
-                     <td class="cardFormElementTitle">Custom Jobs</td>
-                     <td class="cardFormElementDesc">Create a custom job</td>
-
-                  </tr>
-
-                   <tr>
-                    <td colspan="2" class="cardFormElementContent">
-                      <div  class="cardInlay">
-
-                      <ul>
-        <li class="cardListElement">
-         <table>
-          <tr>
-            <td class="txtTitle" >Name:
-              <br>
-                <input type="text" id="jobName" ng-model="custom.JobName"  />
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" >Description:
-              <br>
-                <input type="text" id="jobDesc" ng-model="custom.JobDesc"  />
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" >Return Code:
-              <br>
-                <input type="number" id="jobCode" ng-model="custom.JobCode"  />
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" >Allow Duplicate:
-              <br>
-                <input type="checkbox" id="jobDup" ng-model="custom.JobDup"  />
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" >Clear on Done:
-              <br>
-                <input type="checkbox" id="jobClear" ng-model="custom.JobClear"  />
-                <!-- <input type="checkbox"  style="-webkit-transform: scale(2); margin-top: 25px; padding-bottom: 5px; padding-top: 5px;" ng-model="custom.JobClear" class="make-switch-checklist" /> -->
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" >Lock UI:
-              <br>
-                <input type="checkbox" id="jobLockUI" ng-model="custom.JobLockUI"  />
-            </td>
-          </tr>
-         </table>
-        </li>
-      </ul>
-                      </div>
-                     </td>
-                   </tr>
-
-              </table><br />
-
-
-
+        <tr>
+          <td class="cardFormElementTitle">Custom Jobs</td>
+          <td class="cardFormElementDesc">Create a custom job</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <ul>
+                <li class="cardListElement">
+                  <table>
+                    <tr>
+                      <td class="txtTitle" >Name:
+                        <br>
+                        <input type="text" id="jobName" ng-model="custom.JobName"  />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="txtTitle" >Description:
+                        <br>
+                        <input type="text" id="jobDesc" ng-model="custom.JobDesc"  />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="txtTitle" >Return Code:
+                        <br>
+                        <input type="number" id="jobCode" ng-model="custom.JobCode"  />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="txtTitle" >Allow Duplicate:
+                        <br>
+                        <input type="checkbox" id="jobDup" ng-model="custom.JobDup"  />
+                        <br>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="txtTitle" >Clear on Done:
+                        <br>
+                        <input type="checkbox" id="jobClear" ng-model="custom.JobClear"  />
+                        <br>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="txtTitle" >Lock UI:
+                        <br>
+                        <input type="checkbox" id="jobLockUI" ng-model="custom.JobLockUI"  />
+                        <br>
+                      </td>
+                    </tr>
+                  </table>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <br />
     </content>
     <cbl></cbl>
     <cbr><x onClick="_jobQueue.addCustomJob()">Add Job</x></cbr>
-
-</face>
+  </face>
 </card>

@@ -10,6 +10,7 @@ _loginTest = {
 
 
     	 layout.attach('#loginTestFront');
+         layout.attach('#loginMulti');
     	
     },
 
@@ -28,7 +29,7 @@ _loginTest = {
 
     _Ctrl : function()
   	{
-	    e = document.getElementById('loginTestFront__FACE');
+	    e = document.getElementById('loginMulti__FACE');
 	    
 	    scope = angular.element(e).scope();
 	    
@@ -51,11 +52,24 @@ _loginTest = {
     ,
     logout : function()
     {
-    	//Not the correct way to logout. Should use app.logout();
+        //Not the correct way to logout. Should use app.logout();
         atajo.model.del('users', app.credentials.key, function() {
-        	_loginTest._Ctrl();
+            _login_multi.credentials = false ;
+            _loginTest._Ctrl();
         });
-        _login_multi.credentials = false ;
+        
+    },
+    logoutAll : function()
+    {
+        atajo.model.nuke('users',function() {
+            _login_multi.credentials = false ;
+            _loginTest._Ctrl();
+        });
+        
+    },
+    swapUser : function()
+    {
+        app.switchUser();
     }
 
 };;;

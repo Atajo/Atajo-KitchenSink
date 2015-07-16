@@ -22,7 +22,7 @@ _services = {
 			function() {
 				_services._Ctrl();  
 			}
-			, 1000);
+			, 500);
     	
     },
 
@@ -32,8 +32,7 @@ _services = {
     },
 
     Ctrl : function($scope)
-    {
-
+    {        
     	$scope.data = _services.model;
     },
 
