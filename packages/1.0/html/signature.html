@@ -1,44 +1,38 @@
 <card id="signature" fill="true" >
-
-<face id="signatureFront" settings="default:true" controller="_signature.Ctrl">
+  <face id="signatureFront" settings="default:true" controller="_signature.Ctrl">
     <ctl>SIGNATURE!</ctl>
     <ctr>
     </ctr>
-
     <content>
       <div>
         <ul>
           <li ng-show="sig != ''">
             <center>
               <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-
-                  <tr>
-                     <td class="cardFormElementTitle">Signature</td>
-                     <td class="cardFormElementDesc"  onClick="_signature.removeSignature()">DELETE&nbsp;<x class="gui-extra">&#xf00d;</x>
-
-                    </td>
-                  </tr>
-
-                   <tr>
-                     <td colspan="2" class="cardFormElementContent">
-                       <table>
-                        <tr>
+                <tr>
+                  <td class="cardFormElementTitle">Signature</td>
+                  <td class="cardFormElementDesc"  onClick="_signature.removeSignature()">DELETE&nbsp;<x class="gui-extra">&#xf00d;</x>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="cardFormElementContent">
+                    <table>
+                      <tr>
                         <td>
-                            <img style="max-width:100%;" src="{{sig}}"  />
+                          <img style="max-width:100%;" src="{{sig}}"  />
                         </td>
-                        </tr>
-                      </table>
-                     </td>
-                   </tr>
-                </table>
-             </center>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </center>
           </li>
           <placeholder ng-show="sig == ''">NO SIGNATURE</placeholder>
         </ul>
       </div>
-
     </content>
     <cbl id="btnAdd"  onClick="_signature.captureSignature();">GET SIGNATURE</cbl>
     <cbr></cbr>
-</face>
+  </face>
 </card>

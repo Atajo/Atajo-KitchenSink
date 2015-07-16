@@ -16,7 +16,7 @@ _jobQueue = {
 
        _jobQueue.custom = {
         JobName : "name",
-        JobDesc : "DEsc",
+        JobDesc : "Desc",
         JobCode : 1,
         JobDup : false,
         JobClear : false,

@@ -1,10 +1,8 @@
 <card id="input" fill="true" >
-
-<face id="inputFront" settings="default:true" controller="_input.Ctrl">
+  <face id="inputFront" settings="default:true" controller="_input.Ctrl">
     <ctl>HTML Input</ctl>
     <ctr>
     </ctr>
-
     <content>
       <ul>
         <li class="cardListElement">
@@ -22,407 +20,405 @@
           </table>
         </li>
       </ul>
-
     </content>
     <cbl></cbl>
     <cbr></cbr>
-</face>
-
-<face id="input_common" face="back" controller="_input.Common_Ctrl">
+  </face>
+  <face id="input_common" face="back" controller="_input.Common_Ctrl">
     <ctl>HTML Common</ctl>
     <ctr class="gui" flip-target="close">x</ctr>
-     <content>
+    <content>
       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-          <tr>
-             <td class="cardFormElementTitle">Text</td>
-          </tr>
-           <tr>
-            <td colspan="2" class="cardFormElementContent">
-              <div  class="cardInlay">
-               <ul>		
-		        <li class="cardListElement">
-		         <table>
-		          <tr>
-		            <td align="right">
-		              <input type="Text" ng-model="common.text" />
-		            </td>		
-		          </tr>
-		         </table>
-		        </li>
-		       </ul>
-              </div>
-             </td>
-           </tr>
+        <tr>
+          <td class="cardFormElementTitle">Text</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <ul>		
+                <li class="cardListElement">
+                  <table>
+                    <tr>
+                      <td align="right">
+                        <input type="Text" ng-model="common.text" />
+                      </td>		
+                    </tr>
+                  </table>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
       </table><br />
       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-          <tr>
-             <td class="cardFormElementTitle">Password</td>
-          </tr>
-           <tr>
-            <td colspan="2" class="cardFormElementContent">
-              <div  class="cardInlay">
-               <ul>		
-		        <li class="cardListElement">
-		         <table>
-		          <tr>
-		            <td align="right">
-		              <input type="password" ng-model="common.password" />
-		            </td>		
-		          </tr>
-		         </table>
-		        </li>
-		       </ul>
-              </div>
-             </td>
-           </tr>
-      </table><br />
-       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-          <tr>
-             <td class="cardFormElementTitle">Radio</td>
-          </tr>
-           <tr>
-            <td colspan="2" class="cardFormElementContent">
-              <div  class="cardInlay">
-               <ul>		
-		        <li class="cardListElement">
-		         <table>
-		          <tr>
-		            <td align="right">
-		              <input type="radio" name="sex" ng-model="common.radio" value="male" checked> Male
-					  <br>
-					  <input type="radio" name="sex" ng-model="common.radio" value="female"> Female
-		            </td>		
-		          </tr>
-		         </table>
-		        </li>
-		       </ul>
-              </div>
-             </td>
-           </tr>
+        <tr>
+          <td class="cardFormElementTitle">Password</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <ul>		
+                <li class="cardListElement">
+                  <table>
+                    <tr>
+                      <td align="right">
+                        <input type="password" ng-model="common.password" />
+                      </td>		
+                    </tr>
+                  </table>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
       </table><br />
       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-          <tr>
-             <td class="cardFormElementTitle">Checkbox</td>
-          </tr>
-           <tr>
-            <td colspan="2" class="cardFormElementContent">
-              <div  class="cardInlay">
-               <ul>		
-		        <li class="cardListElement">
-		         <table>
-		          <tr>
-		            <td align="right">
-		              <input type="checkbox" ng-model="common.checkbox.bike" value="Bike"/> I have a bike
-                  <br>
-      					  <input type="checkbox" ng-model="common.checkbox.car" value="Car"/> I have a car 
-                  <br>
-                  <input type="checkbox" ng-model="common.checkbox.plane" value="plane"/> I have a plane
-                  <br>
-		            </td>		
-		          </tr>
-		         </table>
-		        </li>
-		       </ul>
-              </div>
-             </td>
-           </tr>
+        <tr>
+          <td class="cardFormElementTitle">Radio</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <ul>		
+                <li class="cardListElement">
+                  <table>
+                    <tr>
+                      <td align="right">
+                        <input type="radio" name="sex" ng-model="common.radio" value="male" checked> Male
+                        <br>
+                        <input type="radio" name="sex" ng-model="common.radio" value="female"> Female
+                      </td>		
+                    </tr>
+                  </table>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </table><br />
+      <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+        <tr>
+          <td class="cardFormElementTitle">Checkbox</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <ul>		
+                <li class="cardListElement">
+                  <table>
+                    <tr>
+                      <td align="right">
+                        <input type="checkbox" ng-model="common.checkbox.bike" value="Bike"/> I have a bike
+                        <br>
+                        <input type="checkbox" ng-model="common.checkbox.car" value="Car"/> I have a car 
+                        <br>
+                        <input type="checkbox" ng-model="common.checkbox.plane" value="plane"/> I have a plane
+                        <br>
+                      </td>		
+                    </tr>
+                  </table>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
       </table><br />
     </content>        
     <cbl></cbl>
     <cbr></cbr>
-</face>
-<face id="input_other" face="back" controller="_input.Other_Ctrl">
+  </face>
+  <face id="input_other" face="back" controller="_input.Other_Ctrl">
     <ctl>HTML Other</ctl>
     <ctr class="gui" flip-target="close">x</ctr>
-     <content>
+    <content>
       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-          <tr>
-             <td class="cardFormElementTitle">Date Picker</td>
-          </tr>
-           <tr>
-            <td colspan="2" class="cardFormElementContent">
-              <div  class="cardInlay">
-               <ul>		
-		        <li class="cardListElement">
-		         <table>
-		          <tr>
-		            <td align="right">
-		              <input type="date" ng-model="other.date" />
-		            </td>		
-		          </tr>
-		         </table>
-		        </li>
-		       </ul>
-              </div>
-             </td>
-           </tr>
-      </table><br />
-    <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-          <tr>
-             <td class="cardFormElementTitle">Color Picker</td>
-          </tr>
-           <tr>
-            <td colspan="2" class="cardFormElementContent">
-              <div  class="cardInlay">
-               <ul>		
-		        <li class="cardListElement">
-		         <table>
-		          <tr>
-		            <td align="right">
-		              <input type="color" ng-model="other.color" />
-		            </td>		
-		          </tr>
-		         </table>
-		        </li>
-		       </ul>
-              </div>
-             </td>
-           </tr>
+        <tr>
+          <td class="cardFormElementTitle">Date Picker</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <ul>		
+                <li class="cardListElement">
+                  <table>
+                    <tr>
+                      <td align="right">
+                        <input type="date" ng-model="other.date" />
+                      </td>		
+                    </tr>
+                  </table>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
       </table><br />
       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-          <tr>
-             <td class="cardFormElementTitle">DateTime Picker</td>
-          </tr>
-           <tr>
-            <td colspan="2" class="cardFormElementContent">
-              <div  class="cardInlay">
-               <ul>		
-		        <li class="cardListElement">
-		         <table>
-		          <tr>
-		            <td align="right">
-		              <input type="datetime" ng-model="other.datetime" />
-		            </td>		
-		          </tr>
-		         </table>
-		        </li>
-		       </ul>
-              </div>
-             </td>
-           </tr>
+        <tr>
+          <td class="cardFormElementTitle">Color Picker</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <ul>		
+                <li class="cardListElement">
+                  <table>
+                    <tr>
+                      <td align="right">
+                        <input type="color" ng-model="other.color" />
+                      </td>		
+                    </tr>
+                  </table>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
       </table><br />
       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-          <tr>
-             <td class="cardFormElementTitle">DateTime-local Picker</td>
-          </tr>
-           <tr>
-            <td colspan="2" class="cardFormElementContent">
-              <div  class="cardInlay">
-               <ul>		
-		        <li class="cardListElement">
-		         <table>
-		          <tr>
-		            <td align="right">
-		              <input type="datetime-local" ng-model="other.datetimelocal" />
-		            </td>		
-		          </tr>
-		         </table>
-		        </li>
-		       </ul>
-              </div>
-             </td>
-           </tr>
+        <tr>
+          <td class="cardFormElementTitle">DateTime Picker</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <ul>		
+                <li class="cardListElement">
+                  <table>
+                    <tr>
+                      <td align="right">
+                        <input type="datetime" ng-model="other.datetime" />
+                      </td>		
+                    </tr>
+                  </table>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
       </table><br />
       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-          <tr>
-             <td class="cardFormElementTitle">Email </td>
-          </tr>
-           <tr>
-            <td colspan="2" class="cardFormElementContent">
-              <div  class="cardInlay">
-               <ul>		
-		        <li class="cardListElement">
-		         <table>
-		          <tr>
-		            <td align="right">
-		              <input type="email" ng-model="other.email" />
-		            </td>		
-		          </tr>
-		         </table>
-		        </li>
-		       </ul>
-              </div>
-             </td>
-           </tr>
+        <tr>
+          <td class="cardFormElementTitle">DateTime-local Picker</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <ul>		
+                <li class="cardListElement">
+                  <table>
+                    <tr>
+                      <td align="right">
+                        <input type="datetime-local" ng-model="other.datetimelocal" />
+                      </td>		
+                    </tr>
+                  </table>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
       </table><br />
       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-          <tr>
-             <td class="cardFormElementTitle">Month</td>
-          </tr>
-           <tr>
-            <td colspan="2" class="cardFormElementContent">
-              <div  class="cardInlay">
-               <ul>		
-		        <li class="cardListElement">
-		         <table>
-		          <tr>
-		            <td align="right">
-		              <input type="month" ng-model="other.month" />
-		            </td>		
-		          </tr>
-		         </table>
-		        </li>
-		       </ul>
-              </div>
-             </td>
-           </tr>
+        <tr>
+          <td class="cardFormElementTitle">Email </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <ul>		
+                <li class="cardListElement">
+                  <table>
+                    <tr>
+                      <td align="right">
+                        <input type="email" ng-model="other.email" />
+                      </td>		
+                    </tr>
+                  </table>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
       </table><br />
       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-          <tr>
-             <td class="cardFormElementTitle">Number</td>
-          </tr>
-           <tr>
-            <td colspan="2" class="cardFormElementContent">
-              <div  class="cardInlay">
-               <ul>		
-		        <li class="cardListElement">
-		         <table>
-		          <tr>
-		            <td align="right">
-		              <input type="number" ng-model="other.number" />
-		            </td>		
-		          </tr>
-		         </table>
-		        </li>
-		       </ul>
-              </div>
-             </td>
-           </tr>
+        <tr>
+          <td class="cardFormElementTitle">Month</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <ul>		
+                <li class="cardListElement">
+                  <table>
+                    <tr>
+                      <td align="right">
+                        <input type="month" ng-model="other.month" />
+                      </td>		
+                    </tr>
+                  </table>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
       </table><br />
       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-          <tr>
-             <td class="cardFormElementTitle">Range</td>
-          </tr>
-           <tr>
-            <td colspan="2" class="cardFormElementContent">
-              <div  class="cardInlay">
-               <ul>		
-		        <li class="cardListElement">
-		         <table>
-		          <tr>
-		            <td align="right">
-		              <input type="range" ng-model="other.range" min="0" max="10" />
-		            </td>		
-		          </tr>
-		         </table>
-		        </li>
-		       </ul>
-              </div>
-             </td>
-           </tr>
+        <tr>
+          <td class="cardFormElementTitle">Number</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <ul>		
+                <li class="cardListElement">
+                  <table>
+                    <tr>
+                      <td align="right">
+                        <input type="number" ng-model="other.number" />
+                      </td>		
+                    </tr>
+                  </table>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
       </table><br />
       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-          <tr>
-             <td class="cardFormElementTitle">Search</td>
-          </tr>
-           <tr>
-            <td colspan="2" class="cardFormElementContent">
-              <div  class="cardInlay">
-               <ul>		
-		        <li class="cardListElement">
-		         <table>
-		          <tr>
-		            <td align="right">
-		              <input type="search" ng-model="other.search" />
-		            </td>		
-		          </tr>
-		         </table>
-		        </li>
-		       </ul>
-              </div>
-             </td>
-           </tr>
+        <tr>
+          <td class="cardFormElementTitle">Range</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <ul>		
+                <li class="cardListElement">
+                  <table>
+                    <tr>
+                      <td align="right">
+                        <input type="range" ng-model="other.range" min="0" max="10" />
+                      </td>		
+                    </tr>
+                  </table>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
       </table><br />
       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-          <tr>
-             <td class="cardFormElementTitle">Tel</td>
-          </tr>
-           <tr>
-            <td colspan="2" class="cardFormElementContent">
-              <div  class="cardInlay">
-               <ul>		
-		        <li class="cardListElement">
-		         <table>
-		          <tr>
-		            <td align="right">
-		              <input type="tel" ng-model="other.tel" />
-		            </td>		
-		          </tr>
-		         </table>
-		        </li>
-		       </ul>
-              </div>
-             </td>
-           </tr>
+        <tr>
+          <td class="cardFormElementTitle">Search</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <ul>		
+                <li class="cardListElement">
+                  <table>
+                    <tr>
+                      <td align="right">
+                        <input type="search" ng-model="other.search" />
+                      </td>		
+                    </tr>
+                  </table>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
       </table><br />
       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-          <tr>
-             <td class="cardFormElementTitle">Time</td>
-          </tr>
-           <tr>
-            <td colspan="2" class="cardFormElementContent">
-              <div  class="cardInlay">
-               <ul>		
-		        <li class="cardListElement">
-		         <table>
-		          <tr>
-		            <td align="right">
-		              <input type="time" ng-model="other.time" />
-		            </td>		
-		          </tr>
-		         </table>
-		        </li>
-		       </ul>
-              </div>
-             </td>
-           </tr>
+        <tr>
+          <td class="cardFormElementTitle">Tel</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <ul>		
+                <li class="cardListElement">
+                  <table>
+                    <tr>
+                      <td align="right">
+                        <input type="tel" ng-model="other.tel" />
+                      </td>		
+                    </tr>
+                  </table>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
       </table><br />
       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-          <tr>
-             <td class="cardFormElementTitle">URL</td>
-          </tr>
-           <tr>
-            <td colspan="2" class="cardFormElementContent">
-              <div  class="cardInlay">
-               <ul>		
-		        <li class="cardListElement">
-		         <table>
-		          <tr>
-		            <td align="right">
-		              <input type="url" ng-model="other.url" />
-		            </td>		
-		          </tr>
-		         </table>
-		        </li>
-		       </ul>
-              </div>
-             </td>
-           </tr>
+        <tr>
+          <td class="cardFormElementTitle">Time</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <ul>		
+                <li class="cardListElement">
+                  <table>
+                    <tr>
+                      <td align="right">
+                        <input type="time" ng-model="other.time" />
+                      </td>		
+                    </tr>
+                  </table>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
       </table><br />
       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-          <tr>
-             <td class="cardFormElementTitle">Week</td>
-          </tr>
-           <tr>
-            <td colspan="2" class="cardFormElementContent">
-              <div  class="cardInlay">
-               <ul>		
-		        <li class="cardListElement">
-		         <table>
-		          <tr>
-		            <td align="right">
-		              <input type="week" ng-model="other.week" />
-		            </td>		
-		          </tr>
-		         </table>
-		        </li>
-		       </ul>
-              </div>
-             </td>
-           </tr>
+        <tr>
+          <td class="cardFormElementTitle">URL</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <ul>		
+                <li class="cardListElement">
+                  <table>
+                    <tr>
+                      <td align="right">
+                        <input type="url" ng-model="other.url" />
+                      </td>		
+                    </tr>
+                  </table>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </table><br />
+      <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+        <tr>
+          <td class="cardFormElementTitle">Week</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <ul>		
+                <li class="cardListElement">
+                  <table>
+                    <tr>
+                      <td align="right">
+                        <input type="week" ng-model="other.week" />
+                      </td>		
+                    </tr>
+                  </table>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
       </table><br />
     </content>        
     <cbl></cbl>
     <cbr></cbr>
-</face>
+  </face>
 </card>

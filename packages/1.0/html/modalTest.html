@@ -1,67 +1,56 @@
 <card id="modalTest" fill="true" >
-
-<face id="modalTestFront" settings="default:true" controller="_modalTest.Ctrl">
+  <face id="modalTestFront" settings="default:true" controller="_modalTest.Ctrl">
     <ctl>Modal</ctl>
-    <ctr>
-    </ctr>
-
+    <ctr></ctr>
     <content>
       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-
-                  <tr>
-                     <td class="cardFormElementTitle">Modal</td>
-                     <td class="cardFormElementDesc">Create a custom modal</td>
-
-                  </tr>
-
-                   <tr>
-                    <td colspan="2" class="cardFormElementContent">
-                      <div  class="cardInlay">
-
-                      <ul>
-        <li class="cardListElement">
-         <table>
-         	<tr>
-            <td class="txtTitle" >Type:
-              <br>
-                <select ng-model="model.type" >
-				  <option value="warning">warning</option>
-				  <option value="sync">sync</option>
-				</select>
-            </td>
-          </tr>
-          <tr>
-          <tr>
-            <td class="txtTitle" >Title:
-              <br>
-                <input type="text" id="jobName" ng-model="model.title"  />
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" >HTML Message:
-              <br>
-                <input type="text" id="jobDesc" ng-model="model.message"  />
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" >Show Cancel:
-              <br>
-                <input type="checkbox" id="jobLockUI" ng-model="model.showCancel"  />
-            </td>
-          </tr>
-         </table>
-        </li>
-      </ul>
-                      </div>
-                     </td>
-                   </tr>
-
-              </table><br />
-
-
-
+        <tr>
+          <td class="cardFormElementTitle">Modal</td>
+          <td class="cardFormElementDesc">Create a custom modal</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <ul>
+                <li class="cardListElement">
+                  <table>
+                    <tr>
+                      <td class="txtTitle" >Type:
+                        <br>
+                        <select ng-model="model.type" >
+                          <option value="warning">warning</option>
+                          <option value="sync">sync</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="txtTitle" >Title:
+                        <br>
+                        <input type="text" id="jobName" ng-model="model.title"  />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="txtTitle" >HTML Message:
+                        <br>
+                        <input type="text" id="jobDesc" ng-model="model.message"  />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="txtTitle" >Show Cancel:
+                        <br>
+                        <input type="checkbox" id="jobLockUI" ng-model="model.showCancel"  />
+                      </td>
+                    </tr>
+                  </table>
+                </li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <br />
     </content>
     <cbl id="btnAdd"  onClick="_modalTest.showModal()">Show modal</cbl>
     <cbr></cbr>
-</face>
+  </face>
 </card>

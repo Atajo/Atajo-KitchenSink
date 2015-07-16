@@ -1,107 +1,102 @@
 <card id="testList" fill="true" >
-
-<face id="testListFront" settings="default:true,refresh:dateHandler" controller="_testList.Ctrl">
+  <face id="testListFront" settings="default:true" controller="_testList.Ctrl">
     <ctl>Kitchen Sink Test List</ctl>
     <ctr>
     </ctr>
-
     <content>
       <ul>
-       <li class="cardListElement">
-         <table>  
-          <tr>
-            <td class="txtTitle" onClick="layout.show('screenFlip');">Screen Flip<br/>
-              <x class="cardListElementSubText">Flip Screen</x>
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="layout.show('jobQueue');">Job Queue<br/>
-              <x class="cardListElementSubText">Test the Job Queue</x>
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="layout.show('photo');">Photo<br/>
-              <x class="cardListElementSubText">Test photos</x>
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="layout.show('signature');">Signature<br/>
-              <x class="cardListElementSubText">Test Signature</x>
-            </td>
-          </tr>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="layout.show('gps');">Location<br/>
-              <x class="cardListElementSubText">Test GPS Location</x>
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="layout.show('storage');">Storage<br/>
-              <x class="cardListElementSubText">Test Storage</x>
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="layout.show('input');">Input<br/>
-              <x class="cardListElementSubText">Test HTML Input</x>
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="layout.show('barcode');">Barcode Scanner<br/>
-              <x class="cardListElementSubText">Test Barcode Scanner</x>
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="layout.show('modalTest');">Modal<br/>
-              <x class="cardListElementSubText">Test Modal</x>
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="layout.show('apiReq');">API Request<br/>
-              <x class="cardListElementSubText">Api Request</x>
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="layout.show('flip');">Flips<br/>
-              <x class="cardListElementSubText">Test Flips</x>
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="layout.show('pinLock');">Pin Lock Screen<br/>
-              <x class="cardListElementSubText">Test Pin Lock</x>
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="layout.show('services');">Services<br/>
-              <x class="cardListElementSubText">Test service data</x>
-            </td>
-          </tr>
-                    <tr>
-            <td class="txtTitle" onClick="layout.show('multipleCards');">Multiple Cards<br/>
-              <x class="cardListElementSubText">Test Multiple Cards</x>
-            </td>
-          </tr>
-             <tr>
-            <td class="txtTitle" onClick="layout.show('angular');">Angular<br/>
-              <x class="cardListElementSubText">Test Angular Functions</x>
-            </td>
-          </tr>
-          </tr>
-             <tr>
-            <td class="txtTitle" onClick="layout.show('scrollTest');">Scroll Test<br/>
-              <x class="cardListElementSubText">Test Scroll</x>
-            </td>
-          </tr>
-          <tr>
-            <td class="txtTitle" onClick="layout.show('loginTest');">Login Test<br/>
-              <x class="cardListElementSubText">Test Login</x>
-            </td>
-          </tr>
-         </table>
+        <li class="cardListElement">
+          <table>  
+            <!-- <tr>
+              <td class="txtTitle" onClick="layout.show('screenFlip');">Screen Flip<br/>
+                <x class="cardListElementSubText">JUST FOR TESTING WITH Tab3 lite</x>
+              </td>
+            </tr>  -->
+            <tr>
+              <td class="txtTitle" onClick="layout.show('jobQueue');">Job Queue<br/>
+                <x class="cardListElementSubText">Test the Job Queue</x>
+              </td>
+            </tr>
+            <tr>
+              <td class="txtTitle" onClick="layout.show('photo');">Photo<br/>
+                <x class="cardListElementSubText">Test photos</x>
+              </td>
+            </tr>
+            <tr>
+              <td class="txtTitle" onClick="layout.show('signature');">Signature<br/>
+                <x class="cardListElementSubText">Test Signature</x>
+              </td>
+            </tr>
+            <tr>
+              <td class="txtTitle" onClick="layout.show('gps');">Location<br/>
+                <x class="cardListElementSubText">Test GPS Location</x>
+              </td>
+            </tr>
+            <tr>
+              <td class="txtTitle" onClick="layout.show('storage');">Storage<br/>
+                <x class="cardListElementSubText">Test Storage</x>
+              </td>
+            </tr>
+            <tr>
+              <td class="txtTitle" onClick="layout.show('input');">Input<br/>
+                <x class="cardListElementSubText">Test HTML Input</x>
+              </td>
+            </tr>
+            <tr>
+              <td class="txtTitle" onClick="layout.show('barcode');">Barcode Scanner<br/>
+                <x class="cardListElementSubText">Test Barcode Scanner</x>
+              </td>
+            </tr>
+            <tr>
+              <td class="txtTitle" onClick="layout.show('modalTest');">Modal<br/>
+                <x class="cardListElementSubText">Test Modal</x>
+              </td>
+            </tr>
+            <tr>
+              <td class="txtTitle" onClick="layout.show('apiReq');">API Request<br/>
+                <x class="cardListElementSubText">Api Request</x>
+              </td>
+            </tr>
+            <tr>
+              <td class="txtTitle" onClick="layout.show('flip');">Flips<br/>
+                <x class="cardListElementSubText">Test Flips</x>
+              </td>
+            </tr>
+            <tr>
+              <td class="txtTitle" onClick="layout.show('pinLock');">Pin Lock Screen<br/>
+                <x class="cardListElementSubText">Test Pin Lock</x>
+              </td>
+            </tr>
+            <tr>
+              <td class="txtTitle" onClick="layout.show('services');">Sync Services<br/>
+                <x class="cardListElementSubText">Test sync service data</x>
+              </td>
+            </tr>
+            <tr>
+              <td class="txtTitle" onClick="layout.show('multipleCards');">Multiple Cards<br/>
+                <x class="cardListElementSubText">Test Multiple Cards</x>
+              </td>
+            </tr>
+            <tr>
+              <td class="txtTitle" onClick="layout.show('angular');">Angular<br/>
+                <x class="cardListElementSubText">Test Angular Functions</x>
+              </td>
+            </tr>
+            <tr>
+              <td class="txtTitle" onClick="layout.show('scrollTest');">Scroll Test<br/>
+                <x class="cardListElementSubText">Test Scroll</x>
+              </td>
+            </tr>
+            <tr>
+              <td class="txtTitle" onClick="layout.show('loginTest');">Login Test<br/>
+                <x class="cardListElementSubText">Test Login</x>
+              </td>
+            </tr>
+          </table>
         </li>
       </ul>
     </content>
     <cbl onClick="app.doLogout();">Logout</cbl>
     <cbr></cbr>
-
-</face>
+  </face>
 </card>

@@ -1,10 +1,8 @@
 <card id="pinLock" fill="true" >
 
-<face id="pinLockFront" settings="default:true" controller="_pinLock.Ctrl">
+  <face id="pinLockFront" settings="default:true" controller="_pinLock.Ctrl">
     <ctl>Lock Screen</ctl>
-    <ctr>
-    </ctr>
-
+    <ctr></ctr>
     <content>
       <div>
         <ul>
@@ -28,48 +26,43 @@
               </ul>
               <br>
               <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-
-                  <tr>
-                     <td class="cardFormElementTitle">Note</td>
-
-                    </td>
-                  </tr>
-
-                   <tr>
-                     <td colspan="2" class="cardFormElementContent">
-                      <div  class="cardInlay">
-                       <table style="text-transform: none !important">
+                <tr>
+                  <td class="cardFormElementTitle">Note</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="cardFormElementContent">
+                    <div  class="cardInlay">
+                      <table style="text-transform: none !important">
                         <tr>
-                        <td>
-                        	To enable the pin screen on startup, change the pinLock entry in conf/config.json to 
-                          <br><br>
-        	"pinLock" :<br>
-            {<br>
-              "enabled" : true,<br>
-              "timeout" : 2<br>
-            }<br>
-<br>
-            and to disable it on startup change it to <br>
-<br>
-            "pinLock" :<br>
-            {<br>
-              "enabled" : false,<br>
-              "timeout" : 2<br>
-            }<br>
-                        </td>
+                          <td>
+                            To enable the pin screen on startup, change the pinLock entry in conf/config.json to 
+                            <br><br>
+                            "pinLock" :<br>
+                            {<br>
+                            "enabled" : true,<br>
+                            "timeout" : 2<br>
+                            }<br>
+                            <br>
+                            and to disable it on startup change it to <br>
+                            <br>
+                            "pinLock" :<br>
+                            {<br>
+                            "enabled" : false,<br>
+                            "timeout" : 2<br>
+                            }<br>
+                          </td>
                         </tr>
                       </table>
-                      </div>
-                     </td>
-                   </tr>
-                </table>
-             </center>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </center>
           </li>
         </ul>
       </div>
-
     </content>
     <cbl></cbl>
     <cbr></cbr>
-</face>
+  </face>
 </card>

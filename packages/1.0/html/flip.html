@@ -1,6 +1,5 @@
 <card id="flip" fill="true" flip='rl'>
-
-<face id="flipFront" controller="_flip.Ctrl">
+  <face id="flipFront" controller="_flip.Ctrl">
     <ctl>Flip</ctl>
     <ctr></ctr>
     <content>
@@ -40,63 +39,38 @@
             </tr>
           </table>
         </li>
-<!--         <li class="cardListElement">
-          <table>
-            <tr>
-              <td class="txtTitle"  onClick="_flip.setDir('lr')" >Set Left to Righ<br /><x class="cardListElementSubText">Set Flip from left to right</x></td>
-            </tr>
-          
-            <tr>
-              <td class="txtTitle" onClick="_flip.setDir('rl')" >Set Right to Left<br /><x class="cardListElementSubText">Set Flip from right to left</x></td>
-            </tr>
-          
-            <tr>
-              <td class="txtTitle"  onClick="_flip.setDir('tb')" >Set Top to Bottom<br /><x class="cardListElementSubText">Set Flip from left to right</x></td>
-            </tr>
-         
-            <tr>
-              <td class="txtTitle"  onClick="_flip.setDir('bt')" >Set Bottom to Top<br /><x class="cardListElementSubText">Set Flip from left to right</x></td>
-            </tr>
-          </table>
-        </li> -->
       </ul>
-<br>
- <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-
-                  <tr>
-                     <td class="cardFormElementTitle">Note</td>
-
-                    </td>
-                  </tr>
-
-                   <tr>
-                     <td colspan="2" class="cardFormElementContent">
-                      <div  class="cardInlay">
-                       <table style="text-transform: none !important">
-                        <tr>
-                        <td>
-                          To set the flip direction, set the flip attribute in the card element to one of the following: lr,rl,tb,bt. eg:
-                          <br>
-                          <br>
-                          &lt;card flip='lr'\&gt;<br>
-                          or<BR>
-                          &lt;card flip='tb'\&gt;<br>
-                          etc.
-                          <br>
-                        </td>
-                        </tr>
-                      </table>
-                      </div>
-                     </td>
-                   </tr>
-                </table>
-
+      <br>
+      <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+        <tr>
+          <td class="cardFormElementTitle">Note</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <table style="text-transform: none !important">
+                <tr>
+                  <td>
+                    To set the flip direction, set the flip attribute in the card element to one of the following: lr,rl,tb,bt. eg:
+                    <br>
+                    <br>
+                    &lt;card flip='lr'\&gt;<br>
+                    or<BR>
+                    &lt;card flip='tb'\&gt;<br>
+                    etc.
+                    <br>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </table>
     </content>
     <cbl></cbl>
     <cbr></cbr>
-
-</face>
-<face id="flipBack" >
+  </face>
+  <face id="flipBack" >
     <ctl>Flip</ctl>
     <ctr></ctr>
     <content>
@@ -112,6 +86,5 @@
     </content>
     <cbl></cbl>
     <cbr></cbr>
-
-</face>
+  </face>
 </card>
