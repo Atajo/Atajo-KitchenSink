@@ -60,7 +60,7 @@
 
       "login": {
 
-                  "enabled"  : false,
+                  "enabled"  : true,
                   "heading"  : "Login",
                   "fields": [
                       {
@@ -443,11 +443,11 @@
              {
               "action"  : "apiReqHandler",
               "handler"  : "apiReqHandler"
-            }
-            ,
+             }
+             ,
              {
-              "action"  : "registerPush",
-              "handler"  : "registerPush"
-            }
+              "action"  : "pushHandler",
+              "handler"  : "pushHandler"
+             }
         ]
 }
