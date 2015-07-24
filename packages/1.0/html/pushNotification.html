@@ -3,34 +3,91 @@
     <ctl>Push Notification</ctl>
     <ctr></ctr>
     <content>
-      <div>
-        <ul>
-          <li>
-            <center>
-              <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-                <tr>
-                  <td class="cardFormElementTitle">Text</td>
-                </tr>
-                <tr>
-                  <td colspan="2" class="cardFormElementContent">
-                    <div  class="cardInlay">
-                      <table>
-                        <tr>
-                          <td>
-                            BLAH1
-                          </td>
-                        </tr>
-                      </table>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </center>
-          </li>
-        </ul>
-      </div>
+       <ul>
+        <li class="cardListElement">
+          <table>  
+            <tr>
+              <td class="txtTitle" flip-target="pushSend" >Send<br/>
+                <x class="cardListElementSubText">Send Notification</x>
+              </td>
+            </tr>
+            <tr>
+              <td class="txtTitle" flip-target="pushRecv" >Received<br/>
+                <x class="cardListElementSubText">Received Push Notifications</x>
+              </td>
+            </tr>
+          </table>
+        </li>
+      </ul>
     </content>
-    <cbl onClick="_pushNotification.send()">Send Push Notification</cbl>
+    <cbl></cbl>
+    <cbr></cbr>
+  </face>
+  <face id="pushRecv" settings="refresh:'date'" controller="_pushNotification.CtrlRecv">
+    <ctl>Received Push Notification</ctl>
+    <ctr class="gui" flip-target="close">x</ctr>
+    <content>
+      <ul>
+          <li ng-repeat="message in messages" class="cardListElement" key="{{message.key}}">
+
+          <table>
+            <tr>
+            <td>
+
+              <table flip-target="messageDetailView" flip-callback="_messageList.loadDetails(this)" flip-event="onclick">
+                <tr><td style="color:#777">{{message.at | moment }}</td></tr>
+
+               <tr><td class="cardListElementText" style="padding-left:20px;">
+                  <b>{{message.title}}</b>
+              </td></tr>
+              <tr>
+                  <td ng-show="!message.data._id" class="cardListElementText" style="padding-left:25px;">{{message.data}}</td>
+                  <td ng-show="message.data._id" class="cardListElementText" style="padding-left:25px;">{{message.data._id}}</td>
+
+              </tr>
+              </table>
+
+           </td>
+           <td width="20" align="center" class="gui-extra"  style="font-size:20pt;"  onClick="_pushNotification.delete(this)">
+              &#xf00d;
+           </td>
+           </tr>
+           </table>
+
+          </li>
+         </ul>
+
+          <placeholder ng-show="messages.length == 0">NO MESSAGES</placeholder>
+    </content>
+    <cbl onClick="_pushNotification.refresh()">Refresh</cbl>
+    <cbr></cbr>
+  </face>
+  <face id="pushSend" controller="_pushNotification.CtrlSend">
+    <ctl>Send Push Notifications</ctl>
+    <ctr class="gui" flip-target="close">x</ctr>
+    <content>
+      <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+        <tr>
+          <td class="cardFormElementTitle">Send Data</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <table>
+              <tr>
+                <td>
+                  <input type="text" ng-model="sendMsg.message"  placeholder="Message"/>
+                </td>
+              </tr><tr>
+                <td>
+                  <input type="text" ng-model="sendMsg.data"  placeholder="Data"/>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </content>
+    <cbl ><x onClick="_pushNotification.send()" ng-show="connected" >Send Push Notification</x></cbl>
     <cbr></cbr>
   </face>
 </card>
