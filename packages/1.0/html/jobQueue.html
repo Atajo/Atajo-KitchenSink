@@ -68,10 +68,30 @@
     <cbl></cbl>
     <cbr></cbr>
   </face>
-  <face id="jobQueue_Sing" face="back" >
+  <face id="jobQueue_Sing" face="back" controller="_jobQueue.CtrlSing">
     <ctl>Single Job Queue</ctl>
     <ctr class="gui" flip-target="close">x</ctr>
     <content>
+      <table ng-show="currJob" class="cardFormContainer" cellspacing='0' cellpadding='0'>
+        <tr>
+          <td class="cardFormElementTitle">Current Job</td>
+          <td class="cardFormElementDesc"></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <div ng-show="currJob.status == 'NEW'" style="color:black;">&#xf072;</div>
+              <div ng-show="currJob.status == 'BUSY'"><img src='img/loader_white.gif' width='25' /></div>
+              <div ng-show="currJob.status == 'QUEUED'" class='gui-extra' style='font-size:18pt;'>&#xf019;</div>
+              <div ng-show="currJob.status == 'DELIVERED'" class='gui-extra tickAmber' style='font-size:18pt'>&#xf00c;</div>
+              <div ng-show="currJob.status == 'FAILED'" class='gui-extra ' style='font-size:18pt; color:red'>&#xf071;</div>
+              <div ng-show="currJob.status == 'DONE'" class='gui-extra tickOn' style='font-size:18pt;'>&#xf00c;</div>
+              <div ng-show="currJob.status == 'EXPIRED'" class='gui-extra ' style='font-size:18pt; color:grey'>&#xf071;</div>
+              {{currJob.status}}:{{currJob.jobName}}
+            </div>
+          </td>
+        </tr>
+      </table><br />
       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
         <tr>
           <td class="cardFormElementTitle">Single Jobs</td>
@@ -125,10 +145,30 @@
     <cbl></cbl>
     <cbr><x >TODO</x></cbr>
   </face>
-  <face id="jobQueue_Dup" face="back" >
+  <face id="jobQueue_Dup" face="back" controller="_jobQueue.CtrlDup">
     <ctl>Duplicate Job Queue</ctl>
     <ctr class="gui" flip-target="close">x</ctr>
     <content>
+      <table ng-show="currJob" class="cardFormContainer" cellspacing='0' cellpadding='0'>
+        <tr>
+          <td class="cardFormElementTitle">Current Job</td>
+          <td class="cardFormElementDesc"></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <div ng-show="currJob.status == 'NEW'" style="color:black;">&#xf072;</div>
+              <div ng-show="currJob.status == 'BUSY'"><img src='img/loader_white.gif' width='25' /></div>
+              <div ng-show="currJob.status == 'QUEUED'" class='gui-extra' style='font-size:18pt;'>&#xf019;</div>
+              <div ng-show="currJob.status == 'DELIVERED'" class='gui-extra tickAmber' style='font-size:18pt'>&#xf00c;</div>
+              <div ng-show="currJob.status == 'FAILED'" class='gui-extra ' style='font-size:18pt; color:red'>&#xf071;</div>
+              <div ng-show="currJob.status == 'DONE'" class='gui-extra tickOn' style='font-size:18pt;'>&#xf00c;</div>
+              <div ng-show="currJob.status == 'EXPIRED'" class='gui-extra ' style='font-size:18pt; color:grey'>&#xf071;</div>
+              {{currJob.status}}:{{currJob.jobName}}
+            </div>
+          </td>
+        </tr>
+      </table><br />
       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
         <tr>
           <td class="cardFormElementTitle">Add Jobs</td>
@@ -185,6 +225,26 @@
     <ctl>Custom Job Queue</ctl>
     <ctr class="gui" flip-target="close">x</ctr>
     <content>
+      <table ng-show="currJob" class="cardFormContainer" cellspacing='0' cellpadding='0'>
+        <tr>
+          <td class="cardFormElementTitle">Current Job</td>
+          <td class="cardFormElementDesc"></td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <div ng-show="currJob.status == 'NEW'" style="color:black;">&#xf072;</div>
+              <div ng-show="currJob.status == 'BUSY'"><img src='img/loader_white.gif' width='25' /></div>
+              <div ng-show="currJob.status == 'QUEUED'" class='gui-extra' style='font-size:18pt;'>&#xf019;</div>
+              <div ng-show="currJob.status == 'DELIVERED'" class='gui-extra tickAmber' style='font-size:18pt'>&#xf00c;</div>
+              <div ng-show="currJob.status == 'FAILED'" class='gui-extra ' style='font-size:18pt; color:red'>&#xf071;</div>
+              <div ng-show="currJob.status == 'DONE'" class='gui-extra tickOn' style='font-size:18pt;'>&#xf00c;</div>
+              <div ng-show="currJob.status == 'EXPIRED'" class='gui-extra ' style='font-size:18pt; color:grey'>&#xf071;</div>
+              {{currJob.status}}:{{currJob.jobName}}
+            </div>
+          </td>
+        </tr>
+      </table><br />
       <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
         <tr>
           <td class="cardFormElementTitle">Custom Jobs</td>

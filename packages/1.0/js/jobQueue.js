@@ -2,17 +2,16 @@ _jobQueue = {
 
     model : [ ],
     custom : [ ],
-
+    currJob : null ,
+    currJobs : [],
+    lastFace : 0,
     onExit : function() { var _ = this;
 
     },
 
     onLoaded: function () { var _ = this;
 
-    	 layout.attach('#jobQueueFront');
-       layout.attach('#jobQueue_Sing');
-       layout.attach('#jobQueue_Dup');
-       layout.attach('#jobQueue_Custom');
+
 
        _jobQueue.custom = {
         JobName : "name",
@@ -23,10 +22,45 @@ _jobQueue = {
         JobLockUI : false,
        }
 
+      $.pubsub('subscribe', 'jobQueueUpdate', function(topic, data) {
+           var jobID = data.jobId;
+           var status = data.status;
+          _log.d("data = " + JSON.stringify(data));
+          for (var i in _jobQueue.currJobs)
+          {
+            var job = _jobQueue.currJobs[i];
+            if(jobID == job.jobID)
+            {
+
+              _jobQueue.currJob = {status:status,jobName:job.jobName};
+              if(_jobQueue.lastFace == 1)
+              {
+                _jobQueue._CtrlSing();
+              }else if(_jobQueue.lastFace == 2)
+              {
+                _jobQueue._CtrlDup();
+              }else if(_jobQueue.lastFace == 3)
+              {
+                _jobQueue._Custom_Ctrl();
+              }
+
+              
+              break;
+            }
+          }
+
+      });
+
+     layout.attach('#jobQueueFront');
+     layout.attach('#jobQueue_Sing');
+     layout.attach('#jobQueue_Dup');
+     layout.attach('#jobQueue_Custom');
+
 		setTimeout(
 			function() {
 				_jobQueue._Ctrl();  
         _jobQueue._Custom_Ctrl();
+        _jobQueue._CtrlDup();
 			}
 			, 1000);
     	
@@ -62,7 +96,8 @@ _jobQueue = {
         };
       
         _log.d("JOB = " + JSON.stringify(JOB));
-        jobQueue.add(JOB);
+        jobid = jobQueue.add(JOB);
+        _jobQueue.currJobs.push({jobID:jobid,jobName: name});
 
       }catch(err)
       {
@@ -103,7 +138,8 @@ _jobQueue = {
       };
       
       _log.d("JOB = " + JSON.stringify(JOB));
-      jobQueue.add(JOB);
+      jobid = jobQueue.add(JOB);
+      _jobQueue.currJobs.push({jobID:jobid,jobName: name});
 
         
 
@@ -119,6 +155,8 @@ _jobQueue = {
     Ctrl : function($scope)
     {
       $scope.data = _jobQueue.model;
+      $scope.currJob = _jobQueue.currJob;
+      _jobQueue.lastFace = 0;
     },
 
     _Ctrl : function()
@@ -130,23 +168,47 @@ _jobQueue = {
       scope.$apply(function() 
       {  
          scope.data = _jobQueue.model;
+         scope.currJob = _jobQueue.currJob;
       }); 
+    },
+    _CtrlDup : function()
+    {
+      e = document.getElementById('jobQueue_Dup__FACE');
+      
+      scope = angular.element(e).scope();
+      
+      scope.$apply(function() 
+      {  
+         scope.currJob = _jobQueue.currJob;
+      }); 
+    },
+    CtrlDup : function($scope)
+    {
+      $scope.currJob = _jobQueue.currJob;
+      _jobQueue.lastFace = 2;
+    },
+    _CtrlSing : function()
+    {
+      e = document.getElementById('jobQueue_Sing__FACE');
+      
+      scope = angular.element(e).scope();
+      
+      scope.$apply(function() 
+      {  
+         scope.currJob = _jobQueue.currJob;
+      }); 
+    },
+    CtrlSing : function($scope)
+    {
+      $scope.currJob = _jobQueue.currJob;
+      _jobQueue.lastFace = 1;
     },
     Custom_Ctrl : function($scope)
     {
+
       $scope.custom = _jobQueue.custom;
-
-      // $('.make-switch-checklist').on('touchstart', function () {
-      //     var me = $(this);
-      //     if ($(me).prop('checked')) {
-      //         $(me).prop('checked', false);
-      //         _jobQueue.custom.JobClear = false;
-      //     } else {
-      //         _jobQueue.custom.JobClear = true;
-      //          $(me).prop('checked', true);
-      //     }
-      //   });
-
+      $scope.currJob = _jobQueue.currJob;
+      _jobQueue.lastFace = 3;
     },
 
     _Custom_Ctrl : function()
@@ -159,6 +221,7 @@ _jobQueue = {
       scope.$apply(function() 
       {  
         scope.custom = _jobQueue.custom;
+        scope.currJob = _jobQueue.currJob;
 
       }); 
 

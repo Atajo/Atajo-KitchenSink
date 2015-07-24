@@ -254,6 +254,14 @@
                 "subtext": "Login Test",
                 "views": ["loginTest"],
                 "default": false
+            },
+            "pushNotification": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Push Notification",
+                "subtext": "Push Notification",
+                "views": ["pushNotification"],
+                "default": false
             }
 
         },
@@ -404,6 +412,14 @@
                 "label": "Login Test",
                 "subtext": "Login Test",
                 "views": ["loginTest"],
+                "default": false
+            },
+            "pushNotification": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Push Notification",
+                "subtext": "Push Notification",
+                "views": ["pushNotification"],
                 "default": false
             }
         }
