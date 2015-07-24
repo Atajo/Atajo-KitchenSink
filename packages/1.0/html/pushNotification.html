@@ -1,0 +1,36 @@
+<card id="pushNotification" fill="true" >
+  <face id="pushNotificationFront" settings="default:true" controller="_pushNotification.Ctrl">
+    <ctl>Push Notification</ctl>
+    <ctr></ctr>
+    <content>
+      <div>
+        <ul>
+          <li>
+            <center>
+              <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+                <tr>
+                  <td class="cardFormElementTitle">Text</td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="cardFormElementContent">
+                    <div  class="cardInlay">
+                      <table>
+                        <tr>
+                          <td>
+                            BLAH1
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </center>
+          </li>
+        </ul>
+      </div>
+    </content>
+    <cbl onClick="_pushNotification.send()">Send Push Notification</cbl>
+    <cbr></cbr>
+  </face>
+</card>

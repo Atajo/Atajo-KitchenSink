@@ -8,36 +8,36 @@ _angular = {
 
     onLoaded: function () { var _ = this;
 
-    	 layout.attach('#angularFront');
-    },
+      layout.attach('#angularFront');
+  },
 
-    onMessage : function() {
+  onMessage : function() {
 
 
-    },
+  },
 
-    Ctrl : function($scope)
-    {
+  Ctrl : function($scope)
+  {
 
-    },
+  },
 
-    repeatCtrl : function($scope)
-    {
+  repeatCtrl : function($scope)
+  {
       $scope.names = ['Jani','Hege','Kai']; 
-    },
+  },
 
-    boolCtrl : function($scope)
-    {
+  boolCtrl : function($scope)
+  {
       $scope.bool = false; 
-    },
+  },
 
-    clickCtrl : function($scope)
-    {
+  clickCtrl : function($scope)
+  {
       $scope.num = 0; 
-    },
-    filterCtrl : function($scope)
-    {
+  },
+  filterCtrl : function($scope)
+  {
       $scope.filterData = ''; 
-    },
+  },
 
 };;;
