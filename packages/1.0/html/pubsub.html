@@ -1,0 +1,141 @@
+<card id="pubsub" fill="true" >
+  <face id="pubsubFront" settings="default:true" controller="_pubsub.Ctrl">
+    <ctl>Publish Subscribe Test</ctl>
+    <ctr></ctr>
+    <content>
+
+            <center>
+              <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+            <tr>
+              <td class="cardFormElementTitle">Note</td>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="cardFormElementContent">
+              <div  class="cardInlay">
+                <table style="text-transform: none !important">
+                  <tr>
+                    <td>
+                      publish–subscribe is a messaging pattern where senders of messages, called publishers, send messages directly to specific receivers, called subscribers.
+                      <br>
+                      <br>
+                      To subscribe to a message use:
+                      <br>
+                      .pubsub('subscribe', 'connectionState', function(topic, data){
+                      <br>
+                  	  }); 
+                  	  <br>
+                  	  <br>
+                  	  connectionState is the message, and data is the data recieved.
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <br>
+         <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+            <tr>
+              <td class="cardFormElementTitle">JOBQUEUE</td>
+              <td class="cardFormElementDesc"></td>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="cardFormElementContent">
+              <div  class="cardInlay">
+                <table style="text-transform: none !important">
+                  <tr>
+                    <td>
+                      Subscribed to 'jobQueueUpdate' message. Any updates will be shown here.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    	JobID:<br>
+                    	{{jobQueue.jobId}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    	JobStatus:<br>
+                    	{{jobQueue.status}}
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <br>
+         <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+            <tr>
+              <td class="cardFormElementTitle">CONNECTION STATE</td>
+              <td class="cardFormElementDesc"></td>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="cardFormElementContent">
+              <div  class="cardInlay">
+                <table style="text-transform: none !important">
+                  <tr>
+                    <td>
+                      Subscribed to 'connectionState' message. Any updates will be shown here.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    	Status:<br>
+                    	{{connState.status}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    	Connected:<br>
+                    	{{connState.connected}}
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+            <tr>
+              <td class="cardFormElementTitle">SYNC STATE</td>
+              <td class="cardFormElementDesc"></td>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="cardFormElementContent">
+              <div  class="cardInlay">
+                <table style="text-transform: none !important">
+                  <tr>
+                    <td>
+                      Subscribed to 'syncState' message. Any updates will be shown here.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    	Service:<br>
+                    	{{syncState.service}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                    	Status:<br>
+                    	{{syncState.status}}
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </center>
+
+    </content>
+    <cbl></cbl>
+    <cbr></cbr>
+  </face>
+</card>
