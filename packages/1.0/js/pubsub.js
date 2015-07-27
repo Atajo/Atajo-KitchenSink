@@ -56,5 +56,22 @@ _pubsub = {
     		scope.syncState = _pubsub.syncState;
 	    }); 
     },
+    addJob : function()
+    {
+        response = { code : 1 , req : "req", res : "res", msg : "msg"  };
+
+        jobData = { action:'jobQueue', data: response};
+
+        JOB = {
+            jobName: "pubsub Name",
+            jobDesc: "pubsub Description",
+            data: jobData
+        };
+        jobQueue.add(JOB);
+    },
+    sync : function()
+    {
+        sync.syncOne('date');
+    }
 
 };;;

@@ -3,12 +3,10 @@
     <ctl>Publish Subscribe Test</ctl>
     <ctr></ctr>
     <content>
-
-            <center>
-              <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-            <tr>
-              <td class="cardFormElementTitle">Note</td>
-            </td>
+      <center>
+        <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+          <tr>
+            <td class="cardFormElementTitle">Note</td>
           </tr>
           <tr>
             <td colspan="2" class="cardFormElementContent">
@@ -35,11 +33,10 @@
           </tr>
         </table>
         <br>
-         <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-            <tr>
-              <td class="cardFormElementTitle">JOBQUEUE</td>
-              <td class="cardFormElementDesc"></td>
-            </td>
+        <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+          <tr>
+            <td class="cardFormElementTitle">JOBQUEUE</td>
+            <td class="cardFormElementDesc"></td>
           </tr>
           <tr>
             <td colspan="2" class="cardFormElementContent">
@@ -58,8 +55,14 @@
                   </tr>
                   <tr>
                     <td>
-                    	JobStatus:<br>
-                    	{{jobQueue.status}}
+                      JobStatus:<br>
+                      {{jobQueue.status}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <br>
+                      <x onClick="_pubsub.addJob()">Click to Add Job</x>
                     </td>
                   </tr>
                 </table>
@@ -72,7 +75,6 @@
             <tr>
               <td class="cardFormElementTitle">CONNECTION STATE</td>
               <td class="cardFormElementDesc"></td>
-            </td>
           </tr>
           <tr>
             <td colspan="2" class="cardFormElementContent">
@@ -100,11 +102,11 @@
             </td>
           </tr>
         </table>
+        <br>
         <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
             <tr>
               <td class="cardFormElementTitle">SYNC STATE</td>
               <td class="cardFormElementDesc"></td>
-            </td>
           </tr>
           <tr>
             <td colspan="2" class="cardFormElementContent">
@@ -127,13 +129,18 @@
                     	{{syncState.status}}
                     </td>
                   </tr>
+                  <tr>
+                    <td>
+                      <br>
+                      <x onClick="_pubsub.sync()">Click to Sync date</x>
+                    </td>
+                  </tr>
                 </table>
               </div>
             </td>
           </tr>
         </table>
       </center>
-
     </content>
     <cbl></cbl>
     <cbr></cbr>

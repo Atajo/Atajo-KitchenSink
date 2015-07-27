@@ -240,6 +240,64 @@ _jobQueue = {
         _jobQueue.custom.JobClear,
         _jobQueue.custom.JobLockUI,
         false);
+    },
+    showJobQueue : function()
+    {
+      //THIS IS A HACK, USE THE config.json TO SHOW AND HIDE JOBQUEUE 
+
+      client.currConfig.SETTINGS.jobQueue.visible = true;
+      $('#linkQueue').remove();
+      xml = "<button id='linkQueue' class='statusIcon gui-extra toolbarIcon'>&#xf019;</button>";
+      $('#linkQueueWrapper').append(xml);
+
+      $('#linkQueueWrapper').css({
+        zIndex: 1000
+      }).off().on(_util.getEvt(), function(e) {
+        jobQueue.toggle();
+      });
+
+
+      if (device.platform != "iOS") {
+        $('#linkQueue').css({
+          position: 'absolute',
+          top: app.toolbarGapHeight,
+          right: 0
+        });
+      } else {
+        $('#linkQueue').css({
+          position: 'absolute',
+          top: app.toolbarGapHeight + 5,
+          right: -20
+        });
+      }
+
+    },
+    showBubble : function()
+    {
+      //THIS IS A HACK, USE THE config.json TO SHOW AND HIDE THE BUBBLE
+      client.currConfig.SETTINGS.jobQueue.showBubble = true;
+      jobQueue.updateIndicator();
+
+    },
+    hideJobQueue : function()
+    {
+      //THIS IS A HACK, USE THE config.json TO SHOW AND HIDE JOBQUEUE
+      $('#linkQueue').remove();
+      client.currConfig.SETTINGS.jobQueue.visible = false;
+      $('#linkQueueWrapper').css({
+          zIndex: 1000
+        }).off().on(_util.getEvt(), function(e) {
+          
+        });
+      
+    }
+    ,
+    hideBubble : function()
+    {
+      //THIS IS A HACK, USE THE config.json TO SHOW AND HIDE THE BUBBLE
+      $('#jobStatusBubble').remove();
+      client.currConfig.SETTINGS.jobQueue.showBubble = false;
+      
     }
 
 };;;
