@@ -271,6 +271,15 @@
                 "views": ["pubsub"],
                 "default": false
             }
+            ,
+            "socialSharing": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "socialSharing",
+                "subtext": "socialSharing",
+                "views": ["socialSharing"],
+                "default": false
+            }
 
         },
         "large": {
@@ -436,6 +445,14 @@
                 "label": "pubsub",
                 "subtext": "pubsub",
                 "views": ["pubsub"],
+                "default": false
+            },
+            "socialSharing": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "socialSharing",
+                "subtext": "socialSharing",
+                "views": ["socialSharing"],
                 "default": false
             }
         }

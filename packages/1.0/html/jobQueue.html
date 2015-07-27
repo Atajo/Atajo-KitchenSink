@@ -2,37 +2,59 @@
 
   <face id="jobQueueFront" settings="default:true" controller="_jobQueue.Ctrl">
     <ctl>Job Queue</ctl>
-    <ctr>
-    </ctr>
+    <ctr class="gui-extra" flip-target="jobQueue_notes" flip-event="onclick"> &#xf059; </ctr>
     <content>
       <ul>
         <li class="cardListElement">
           <table>
             <tr>
-              <td class="txtTitle" flip-target="jobQueue_Sing" >Single Jobs<br /><x class="cardListElementSubText">Test Single Jobs</x></td>
+              <td class="txtTitle" flip-target="jobQueue_Sing" flip-event="onclick">Single Jobs<br /><x class="cardListElementSubText">Test Single Jobs</x></td>
             </tr>
           </table>
         </li>
         <li class="cardListElement">
           <table>
             <tr>
-              <td class="txtTitle" flip-target="jobQueue_Dup" >Duplicate Jobs<br /><x class="cardListElementSubText">Test Duplicate Jobs</x></td>
+              <td class="txtTitle" flip-target="jobQueue_Dup" flip-event="onclick">Duplicate Jobs<br /><x class="cardListElementSubText">Test Duplicate Jobs</x></td>
             </tr>
           </table>
         </li>
         <li class="cardListElement">
           <table>
             <tr>
-              <td class="txtTitle" flip-target="jobQueue_Custom" >Custom Jobs<br /><x class="cardListElementSubText">Test Custom Job</x></td>
+              <td class="txtTitle" flip-target="jobQueue_Custom" flip-event="onclick">Custom Jobs<br /><x class="cardListElementSubText">Test Custom Job</x></td>
+            </tr>
+          </table>
+        </li>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle" flip-target="jobQueue_hide" flip-event="onclick">Show/Hide JobQueue Button<br /><x class="cardListElementSubText">Show/Hide the JobQueue Button</x></td>
+            </tr>
+          </table>
+        </li>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle" flip-target="jobQueue_notes" flip-event="onclick">Notes<br /><x class="cardListElementSubText">Show Notes on JobQueue</x></td>
             </tr>
           </table>
         </li>
       </ul>
       <br>
       <br>
-      <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+    </content>
+    <cbl></cbl>
+    <cbr></cbr>
+  </face>
+  <face id="jobQueue_notes" face="back" controller="_jobQueue.CtrlSing">
+    <ctl>Notes on Job Queue</ctl>
+    <ctr class="gui" flip-target="close">x</ctr>
+      <content>
+        <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
         <tr>
           <td class="cardFormElementTitle">Note</td>
+          <td class="cardFormElementDesc">Send Message</td>
         </tr>
         <tr>
           <td colspan="2" class="cardFormElementContent">
@@ -64,10 +86,104 @@
           </td>
         </tr>
       </table>
-    </content>
+      <br>
+        <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+        <tr>
+          <td class="cardFormElementTitle">Note</td>
+          <td class="cardFormElementDesc">JobQueue Button</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <table style="text-transform: none !important">
+                <tr>
+                  <td>
+                    To hide/show the jobqueue button, change the visible flag in the config.json to false/true.<br>
+                    To hide/show the jobqueue bubble, change the showBubble flag in the config.json to false/true.<br>
+
+                    <br>
+                    <br>
+                    "jobQueue" :<br>
+            {<br>
+              "visible"    : false,<br>
+              "maxJobs"    : 0,<br>
+              "jobLife"    : 0,<br>
+              "dataLife"   : 0,<br>
+              "showBubble" : false<br>
+            },<br>
+            <br>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <br>
+        <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+        <tr>
+          <td class="cardFormElementTitle">Note</td>
+          <td class="cardFormElementDesc">Jobqueue Events</td>
+        </tr>
+        <tr>
+          <td colspan="2" class="cardFormElementContent">
+            <div  class="cardInlay">
+              <table style="text-transform: none !important">
+                <tr>
+                  <td>
+                    Goto to pubsub to for more information on the events.
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </table>
+      </content>
     <cbl></cbl>
     <cbr></cbr>
   </face>
+
+  <face id="jobQueue_hide" face="back" controller="_jobQueue.CtrlSing">
+    <ctl>Hide Job Queue Button</ctl>
+    <ctr class="gui" flip-target="close">x</ctr>
+      <content>
+        <ul>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle" onClick="_jobQueue.hideJobQueue()" flip-event="onclick">Hide JobQueue<br /><x class="cardListElementSubText">Click to hide</x></td>
+            </tr>
+          </table>
+        </li>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle" onClick="_jobQueue.showJobQueue()" >Show JobQueue<br /><x class="cardListElementSubText">Click to show</x></td>
+            </tr>
+          </table>
+        </li>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle" onClick="_jobQueue.hideBubble()" >Hide JobQueue Bubble<br /><x class="cardListElementSubText">Click to hide</x></td>
+            </tr>
+          </table>
+        </li>
+        <li class="cardListElement">
+          <table>
+            <tr>
+              <td class="txtTitle" onClick="_jobQueue.showBubble()" >Show JobQueue Bubble<br /><x class="cardListElementSubText">Click to show</x></td>
+            </tr>
+          </table>
+        </li>
+      </ul>
+      <br>
+      </content>
+    <cbl></cbl>
+    <cbr></cbr>
+  </face>
+
   <face id="jobQueue_Sing" face="back" controller="_jobQueue.CtrlSing">
     <ctl>Single Job Queue</ctl>
     <ctr class="gui" flip-target="close">x</ctr>
