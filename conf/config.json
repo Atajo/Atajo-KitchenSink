@@ -60,7 +60,7 @@
 
       "login": {
 
-                  "enabled"  : true,
+                  "enabled"  : false,
                   "heading"  : "Login",
                   "fields": [
                       {
@@ -262,6 +262,14 @@
                 "subtext": "Push Notification",
                 "views": ["pushNotification"],
                 "default": false
+            },
+            "pubsub": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "pubsub",
+                "subtext": "pubsub",
+                "views": ["pubsub"],
+                "default": false
             }
 
         },
@@ -420,6 +428,14 @@
                 "label": "Push Notification",
                 "subtext": "Push Notification",
                 "views": ["pushNotification"],
+                "default": false
+            },
+            "pubsub": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "pubsub",
+                "subtext": "pubsub",
+                "views": ["pubsub"],
                 "default": false
             }
         }
