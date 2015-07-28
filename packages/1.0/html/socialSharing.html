@@ -9,19 +9,21 @@
             <center>
               <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
                 <tr>
-                  <td class="cardFormElementTitle">Note</td>
+                  <td class="cardFormElementTitle">Social Sharing</td>
                 </tr>
                 <tr>
                   <td colspan="2" class="cardFormElementContent">
-                    <div  class="cardInlay">
-                      <table>
-                        <tr>
-                          <td>
-
-                          </td>
-                        </tr>
-                      </table>
-                    </div>
+                    <table>
+                      <tr>
+                        <td>
+                          <input type="text" ng-model="sendMsg.title"  placeholder="Title"/>
+                        </td>
+                      </tr><tr>
+                        <td>
+                          <input type="text" ng-model="sendMsg.message"  placeholder="Message"/>
+                        </td>
+                      </tr>
+                    </table>
                   </td>
                 </tr>
               </table>
@@ -30,7 +32,7 @@
         </ul>
       </div>
     </content>
-    <cbl></cbl>
+    <cbl onClick="_socialSharing.share()">Share</cbl>
     <cbr></cbr>
   </face>
 </card>

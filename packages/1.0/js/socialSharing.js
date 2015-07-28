@@ -1,7 +1,7 @@
 _socialSharing = {
 
     model : [ ],
-    
+    sendMsg : {},
     onExit : function() { var _ = this;
 
     },
@@ -9,7 +9,14 @@ _socialSharing = {
     onLoaded: function () { var _ = this;
 
 
-    	 layout.attach('#socialSharingFront');
+    	layout.attach('#socialSharingFront');
+
+        _socialSharing.sendMsg = {
+            title : "",
+            message : ""
+        };
+
+        _socialSharing._Ctrl();  
 
     },
 
@@ -20,8 +27,7 @@ _socialSharing = {
 
     Ctrl : function($scope)
     {
-
-
+        $scope.sendMsg = _socialSharing.sendMsg;
     },
 
     _Ctrl : function()
@@ -32,8 +38,13 @@ _socialSharing = {
 	    
 	    scope.$apply(function() 
 	    {  
-
+            scope.sendMsg = _socialSharing.sendMsg;
 	    }); 
+    },
+    share : function() {
+
+        window.plugins.socialsharing.share(_socialSharing.sendMsg.message, _socialSharing.sendMsg.title);
+
     },
 
 };;;

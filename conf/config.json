@@ -275,8 +275,8 @@
             "socialSharing": {
                 "menu": true,
                 "icon": "&#xf004;",
-                "label": "socialSharing",
-                "subtext": "socialSharing",
+                "label": "Social Sharing",
+                "subtext": "Social Sharing",
                 "views": ["socialSharing"],
                 "default": false
             }
@@ -450,8 +450,8 @@
             "socialSharing": {
                 "menu": true,
                 "icon": "&#xf004;",
-                "label": "socialSharing",
-                "subtext": "socialSharing",
+                "label": "Social Sharing",
+                "subtext": "Social Sharing",
                 "views": ["socialSharing"],
                 "default": false
             }
