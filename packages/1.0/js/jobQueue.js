@@ -157,6 +157,7 @@ _jobQueue = {
       $scope.data = _jobQueue.model;
       $scope.currJob = _jobQueue.currJob;
       _jobQueue.lastFace = 0;
+
     },
 
     _Ctrl : function()
@@ -186,6 +187,12 @@ _jobQueue = {
     {
       $scope.currJob = _jobQueue.currJob;
       _jobQueue.lastFace = 2;
+
+      setTimeout(
+        function() {
+          $('#updateTableDuplicate').removeAttr('hidden');
+        }
+      , 300);
     },
     _CtrlSing : function()
     {
@@ -200,8 +207,17 @@ _jobQueue = {
     },
     CtrlSing : function($scope)
     {
+
       $scope.currJob = _jobQueue.currJob;
       _jobQueue.lastFace = 1;
+
+      //This is to remove jumpyness
+      setTimeout(
+        function() {
+          $('#updateTableSingle').removeAttr('hidden');
+        }
+      , 300);
+
     },
     Custom_Ctrl : function($scope)
     {
@@ -209,6 +225,12 @@ _jobQueue = {
       $scope.custom = _jobQueue.custom;
       $scope.currJob = _jobQueue.currJob;
       _jobQueue.lastFace = 3;
+
+      setTimeout(
+        function() {
+          $('#updateTableCustom').removeAttr('hidden');
+        }
+      , 300);
     },
 
     _Custom_Ctrl : function()
