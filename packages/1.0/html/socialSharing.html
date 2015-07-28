@@ -1,38 +1,184 @@
 <card id="socialSharing" fill="true" >
   <face id="socialSharingFront" settings="default:true" controller="_socialSharing.Ctrl">
     <ctl>Social Sharing</ctl>
-    <ctr></ctr>
+    <ctr class="gui-extra" >&#xf059;</ctr>
+    <content>
+      <ul>
+        <li class="cardListElement">
+          <table>  
+            <tr>
+              <td class="txtTitle" flip-target="social" flip-event="onclick">Social Media<br/>
+                <x class="cardListElementSubText">Share via Social Media</x>
+              </td>
+            </tr>
+            <tr>
+              <td class="txtTitle" flip-target="sms" flip-event="onclick">SMS<br/>
+                <x class="cardListElementSubText">Share via SMS</x>
+              </td>
+            </tr>
+            <tr>
+              <td class="txtTitle" flip-target="email" flip-event="onclick">Email<br/>
+                <x class="cardListElementSubText">Share via Email</x>
+              </td>
+            </tr>
+          </table>
+        </li>
+      </ul>
+    </content>
+    <cbl></cbl>
+    <cbr></cbr>
+  </face>
+  <face id="social" controller="_socialSharing.Ctrl">
+    <ctl>Social Sharing</ctl>
+    <ctr class="gui" flip-target="close">x</ctr>
     <content>
       <div>
         <ul>
           <li>
-            <center>
-              <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
-                <tr>
-                  <td class="cardFormElementTitle">Social Sharing</td>
-                </tr>
-                <tr>
-                  <td colspan="2" class="cardFormElementContent">
-                    <table>
-                      <tr>
-                        <td>
-                          <input type="text" ng-model="sendMsg.title"  placeholder="Title"/>
-                        </td>
-                      </tr><tr>
-                        <td>
-                          <input type="text" ng-model="sendMsg.message"  placeholder="Message"/>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </center>
+            <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+              <tr>
+                <td class="cardFormElementTitle">Social Sharing</td>
+              </tr>
+              <tr>
+                <td colspan="2" class="cardFormElementContent">
+                  <table>
+                    <tr>
+                      <td>
+                        <input type="text" ng-model="sendMsg.title"  placeholder="Title"/>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="text" ng-model="sendMsg.message"  placeholder="Message"/>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="file" ng-model="sendMsg.file"  />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="text" ng-model="sendMsg.url"  placeholder="URL"/>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </li>
+        </ul>
+      </div>
+      <br>
+      <table style="color:black ! important">
+        <tr>
+          <td class="gui-extra" width="20" style="font-size:20pt;" align="center" onClick="_socialSharing.share()">
+           &#xf1e0;
+          </td>
+          <td class="gui-extra" width="20" style="font-size:20pt;" align="center" onClick="_socialSharing.share('twitter')">
+           &#xf099;
+          </td>
+          <td class="gui-extra" width="20" style="font-size:20pt;" align="center" onClick="_socialSharing.share('facebook')">
+           &#xf09a;
+          </td>
+          <td class="gui-extra" width="20" style="font-size:20pt;" align="center" onClick="_socialSharing.share('whatsapp')">
+           <!-- &#xf232; -->
+           &#xf0e5;
+          </td>
+        </tr>
+      </table>
+    </content>
+    <cbl onClick="_socialSharing.share()">Share</cbl>
+    <cbr></cbr>
+  </face>
+  <face id="sms" controller="_socialSharing.Ctrl">
+    <ctl>SMS Sharing</ctl>
+    <ctr class="gui" flip-target="close">x</ctr>
+    <content>
+      <div>
+        <ul>
+          <li>
+            <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+              <tr>
+                <td class="cardFormElementTitle">SMS Sharing</td>
+              </tr>
+              <tr>
+                <td colspan="2" class="cardFormElementContent">
+                  <table>
+                    <tr>
+                      <td>
+                        <input type="tel" ng-model="smsMsg.nr"  placeholder="Phone Number"/>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="text" ng-model="smsMsg.message"  placeholder="Message"/>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
           </li>
         </ul>
       </div>
     </content>
-    <cbl onClick="_socialSharing.share()">Share</cbl>
+    <cbl onClick="_socialSharing.share('sms')">Share</cbl>
+    <cbr></cbr>
+  </face>
+  <face id="email" controller="_socialSharing.Ctrl">
+    <ctl>Email Sharing</ctl>
+    <ctr class="gui" flip-target="close">x</ctr>
+    <content>
+      <div>
+        <ul>
+          <li>
+            <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+              <tr>
+                <td class="cardFormElementTitle">Email Sharing</td>
+              </tr>
+              <tr>
+                <td colspan="2" class="cardFormElementContent">
+                  <table>
+                    <tr>
+                      <td>
+                        <input type="text" ng-model="emailMsg.to"  placeholder="To"/>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="text" ng-model="emailMsg.cc"  placeholder="CC"/>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="text" ng-model="emailMsg.bcc"  placeholder="BCC"/>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="text" ng-model="emailMsg.subject"  placeholder="Subject"/>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="text" ng-model="emailMsg.message"  placeholder="Message"/>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="file" ng-model="emailMsg.file"  />
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </li>
+        </ul>
+      </div>
+    </content>
+    <cbl onClick="_socialSharing.share('email')">Share</cbl>
     <cbr></cbr>
   </face>
 </card>
