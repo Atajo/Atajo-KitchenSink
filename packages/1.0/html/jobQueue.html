@@ -188,7 +188,7 @@
     <ctl>Single Job Queue</ctl>
     <ctr class="gui" flip-target="close">x</ctr>
     <content>
-      <table ng-show="currJob" class="cardFormContainer" cellspacing='0' cellpadding='0'>
+      <table id="updateTableSingle" ng-show="currJob" class="cardFormContainer" cellspacing='0' cellpadding='0' hidden='true'>
         <tr>
           <td class="cardFormElementTitle">Current Job</td>
           <td class="cardFormElementDesc"></td>
@@ -259,13 +259,13 @@
       </table><br />
     </content>
     <cbl></cbl>
-    <cbr><x >TODO</x></cbr>
+    <cbr></cbr>
   </face>
   <face id="jobQueue_Dup" face="back" controller="_jobQueue.CtrlDup">
     <ctl>Duplicate Job Queue</ctl>
     <ctr class="gui" flip-target="close">x</ctr>
     <content>
-      <table ng-show="currJob" class="cardFormContainer" cellspacing='0' cellpadding='0'>
+      <table id="updateTableDuplicate" hidden='true' ng-show="currJob" class="cardFormContainer" cellspacing='0' cellpadding='0'>
         <tr>
           <td class="cardFormElementTitle">Current Job</td>
           <td class="cardFormElementDesc"></td>
@@ -341,7 +341,7 @@
     <ctl>Custom Job Queue</ctl>
     <ctr class="gui" flip-target="close">x</ctr>
     <content>
-      <table ng-show="currJob" class="cardFormContainer" cellspacing='0' cellpadding='0'>
+      <table id="updateTableCustom" hidden='true' ng-show="currJob" class="cardFormContainer" cellspacing='0' cellpadding='0'>
         <tr>
           <td class="cardFormElementTitle">Current Job</td>
           <td class="cardFormElementDesc"></td>
