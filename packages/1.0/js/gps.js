@@ -2,7 +2,7 @@ _gps = {
 
     model : [ ],
     GPS : [ ],
-    
+    width : 300,
     onExit : function() { var _ = this;
 
     },
@@ -33,6 +33,7 @@ _gps = {
     	
     	e = document.getElementById('gpsFront__FACE');
     	$scope.mapWidth = e.offsetWidth; 
+      _gps.width = e.offsetWidth; 
     },
 
     _Ctrl : function()
@@ -45,6 +46,7 @@ _gps = {
 	    {  
 	       scope.gps = _gps.GPS;
 	       scope.mapWidth = e.offsetWidth; 
+         _gps.width = e.offsetWidth; 
 	    }); 
     },
 
@@ -68,6 +70,9 @@ _gps = {
 
     _gps.GPS.lat = _location.currLat ;
     _gps.GPS.lon = _location.currLon ;
+
+    $('#mapImg').attr("src","http://maps.googleapis.com/maps/api/staticmap?center="+_gps.GPS.lat+","+_gps.GPS.lon+"&zoom=14&size="+_gps.width+"x"+_gps.width+"&maptype=roadmap&markers=color:blue%7C"+_gps.GPS.lat+","+_gps.GPS.lon+"&sensor=false");
+
     _gps._Ctrl();  
 
    },
