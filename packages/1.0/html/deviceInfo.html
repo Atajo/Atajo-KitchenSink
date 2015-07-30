@@ -1,0 +1,53 @@
+<card id="deviceInfo" fill="true" >
+  <face id="deviceInfoFront" settings="default:true" controller="_deviceInfo.Ctrl">
+    <ctl>Device Info</ctl>
+    <ctr></ctr>
+    <content>
+	  <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+	    <tr>
+	      <td class="cardFormElementTitle">Info</td>
+	    </tr>
+	    <tr>
+	      <td colspan="2" class="cardFormElementContent">
+	        <div  class="cardInlay">
+	          <table>
+	            <tr>
+	              <td>
+	                manufacturer: {{device.manufacturer}}
+	              </td>
+	            </tr>
+	            <tr>
+	              <td>
+	                model: {{device.model}}
+	              </td>
+	            </tr>
+	            <tr>
+	              <td>
+	                platform: {{device.platform}}
+	              </td>
+	            </tr>
+	            <tr>
+	              <td>
+	                version: {{device.version}}
+	              </td>
+	            </tr>
+	            <tr>
+	              <td>
+	                cordova: {{device.cordova}}
+	              </td>
+	            </tr>
+	            <tr>
+	              <td>
+	                uuid: {{device.uuid}}
+	              </td>
+	            </tr>
+	          </table>
+	        </div>
+	      </td>
+	    </tr>
+	  </table>
+    </content>
+    <cbl></cbl>
+    <cbr></cbr>
+  </face>
+</card>
