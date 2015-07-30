@@ -11,7 +11,7 @@
 
    "VERSIONS"   :
    {
-      "DEV" : {  "ID" : "1.0", "DEBUG":true,  "COREVERSION" : "1.0" },
+      "DEV" : { "ID" : "1.0", "DEBUG":true,  "COREVERSION" : "1.0" },
       "QAS" : { "ID"  : "1.0", "DEBUG":true,  "COREVERSION" : "1.0" },
       "PRD" : { "ID"  : "1.0", "DEBUG":false, "COREVERSION" : "1.0" }
    },
@@ -280,6 +280,17 @@
                 "views": ["socialSharing"],
                 "default": false
             }
+            ,
+            "deviceInfo": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Device Info",
+                "subtext": "Device Info",
+                "views": ["deviceInfo"],
+                "default": false
+            }
+
+            
 
         },
         "large": {
@@ -453,6 +464,15 @@
                 "label": "Social Sharing",
                 "subtext": "Social Sharing",
                 "views": ["socialSharing"],
+                "default": false
+            }
+            ,
+            "deviceInfo": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Device Info",
+                "subtext": "Device Info",
+                "views": ["deviceInfo"],
                 "default": false
             }
         }
