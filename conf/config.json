@@ -289,8 +289,15 @@
                 "views": ["deviceInfo"],
                 "default": false
             }
-
-            
+            ,
+            "fontAwesome": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Font Awesome",
+                "subtext": "Font Awesome",
+                "views": ["fontAwesome"],
+                "default": false
+            }
 
         },
         "large": {
@@ -473,6 +480,15 @@
                 "label": "Device Info",
                 "subtext": "Device Info",
                 "views": ["deviceInfo"],
+                "default": false
+            }
+            ,
+            "fontAwesome": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Font Awesome",
+                "subtext": "Font Awesome",
+                "views": ["fontAwesome"],
                 "default": false
             }
         }
