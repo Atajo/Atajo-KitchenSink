@@ -106,7 +106,6 @@ _socialSharing = {
                 });
         }else if(platform == 'sms')
         {
-            alert(JSON.stringify(_socialSharing.smsMsg));
             SocialSharing.prototype.shareViaSMS(_socialSharing.smsMsg.message,
             _socialSharing.smsMsg.nr,
             function(msg)
@@ -114,6 +113,7 @@ _socialSharing = {
                 //if it could share via sms
             },function(msg)
             {
+                //TODO: FIX THIS
                 alert("Could not share via SMS " + JSON.stringify(msg));
             });
 
