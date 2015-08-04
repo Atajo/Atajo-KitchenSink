@@ -298,6 +298,15 @@
                 "views": ["fontAwesome"],
                 "default": false
             }
+            ,
+            "flashlight": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Flashlight",
+                "subtext": "Flashlight",
+                "views": ["flashlight"],
+                "default": false
+            }
 
         },
         "large": {
@@ -489,6 +498,15 @@
                 "label": "Font Awesome",
                 "subtext": "Font Awesome",
                 "views": ["fontAwesome"],
+                "default": false
+            }
+            ,
+            "flashlight": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Flashlight",
+                "subtext": "Flashlight",
+                "views": ["flashlight"],
                 "default": false
             }
         }
