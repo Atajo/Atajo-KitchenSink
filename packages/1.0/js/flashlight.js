@@ -41,10 +41,10 @@ _flashlight = {
   	}else if(value == 1)
   	{
   		window.plugins.flashlight.switchOn()
-   }else
-   {
-   		window.plugins.flashlight.toggle()
-   }
+     }else if(value == 2)
+     {
+     		window.plugins.flashlight.toggle()
+     }
    _flashlight._Ctrl();
 }
 ,
