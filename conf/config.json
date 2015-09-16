@@ -60,7 +60,7 @@
 
       "login": {
 
-                  "enabled"  : false,
+                  "enabled"  : true,
                   "heading"  : "Login",
                   "fields": [
                       {
@@ -307,6 +307,15 @@
                 "views": ["flashlight"],
                 "default": false
             }
+            ,
+            "initCall": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Init Call",
+                "subtext": "init function",
+                "views": ["initCall"],
+                "default": false
+            }
 
         },
         "large": {
@@ -507,6 +516,15 @@
                 "label": "Flashlight",
                 "subtext": "Flashlight",
                 "views": ["flashlight"],
+                "default": false
+            }
+             ,
+            "initCall": {
+                "menu": true,
+                "icon": "&#xf004;",
+                "label": "Init Call",
+                "subtext": "init function",
+                "views": ["initCall"],
                 "default": false
             }
         }

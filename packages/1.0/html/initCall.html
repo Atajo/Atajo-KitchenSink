@@ -1,0 +1,43 @@
+
+<card id="initCall" fill="true" >
+  <face id="initCallFront" settings="default:true" controller="_initCall.Ctrl">
+    <ctl>Init Call</ctl>
+    <ctr></ctr>
+    <content>
+      <table class="cardFormContainer" cellspacing='0' cellpadding='0'>
+          <tr>
+            <td class="cardFormElementTitle">Note</td>
+            <td class="cardFormElementDesc">Init Call</td>
+          </tr>
+          <tr>
+            <td colspan="2" class="cardFormElementContent">
+              <div  class="cardInlay">
+                <table style="text-transform: none !important">
+                  <tr>
+                    <td>
+                      To run a init function after login and before loading the default layout, create a new js file, and add the folowing code:
+                      <br>
+                      <br>
+                      _base = <br>
+						{<br>
+							init:function(cb)<br>
+							{<br>
+								_log.d("base init function");<br>
+								cb();<br>
+							}<br>
+						};;<br>
+						<br>
+						look at js/baseCall.js
+						<br>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+          </tr>
+        </table>
+    </content>
+    <cbl></cbl>
+    <cbr></cbr>
+  </face>
+</card>
