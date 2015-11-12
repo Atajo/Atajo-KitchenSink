@@ -495,3 +495,26 @@ background: -webkit-linear-gradient(top,  #b5babc 0%,#847777 100%);
 
 
 }
+
+/* workarounds */
+/* reset extra padding in Firefox, see h5bp.com/l */
+input.ui-button::-moz-focus-inner,
+button.ui-button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+
+.itemUpdate {
+
+    font-size:11pt;
+    font-family:roboto_bc;
+    font-weight:bold;
+    background:rgba(255,80,80,0.6);
+    border-radius:5px;
+    padding:5px;
+    color:#333;
+    test-shadow:none;
+
+}
+

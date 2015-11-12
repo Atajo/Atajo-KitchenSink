@@ -1,0 +1,40 @@
+<card id="pubsubOnList" fill="true" >
+  <face id="pubsubOnListFront" settings="default:true" controller="_pubsubOnList.pubCtrl">
+    <ctl>Kitchen Sink Test List</ctl>
+    <ctr>
+    </ctr>
+    <content>
+      <ul>
+        <li class="cardListElement">
+
+            <table class="listItem" style="margin: 2px;background-color: lightcoral;color: white" ng-repeat="item in info">
+                <tr ng-click="sendJob(10,'Green Tick','Return Code: 10',false,false,{{item}},$index);">
+                    <td style="width: 28%;text-align: center;">
+                        <h4>{{item.user}}</h4>
+                    </td>
+                    <td style="width: 30%;text-align: center">
+                        <h4>{{item.detail}}</h4>
+                    </td>
+                    <td style="width: 28%;text-align: center">
+                        <div ng-show="item.status == 'NEW'" style="color:black;">&#xf072;</div>
+                        <div ng-show="item.status == 'BUSY'"><img src='img/loader_white.gif' width='25' /></div>
+                        <div ng-show="item.status == 'QUEUED'" class='gui-extra' style='font-size:18pt;'>&#xf019;</div>
+                        <div ng-show="item.status == 'DELIVERED'" class='gui-extra tickAmber' style='font-size:18pt'>&#xf00c;</div>
+                        <div ng-show="item.status == 'FAILED'" class='gui-extra ' style='font-size:18pt; color:red'>&#xf071;</div>
+                        <div ng-show="item.status == 'DONE'" class='gui-extra tickOn' style='font-size:18pt;'>&#xf00c;</div>
+                        <div ng-show="item.status == 'EXPIRED'" class='gui-extra ' style='font-size:18pt; color:grey'>&#xf071;</div>
+                        <div ng-show="item.status == 'NONE'" class='gui-extra ' style='font-size:18pt; color:grey'><div align="center" class="itemUpdate">
+                            VERIFY
+                        </div></div>
+                    </td>
+                </tr>
+            </table>
+
+        </li>
+      </ul>
+    </content>
+    <cbl onClick="app.doLogout();">Logout</cbl>
+    <cbr></cbr>
+  </face>
+</card>
+

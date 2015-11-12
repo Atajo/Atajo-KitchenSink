@@ -60,7 +60,7 @@
 
       "login": {
 
-                  "enabled"  : true,
+                  "enabled"  : false,
                   "heading"  : "Login",
                   "fields": [
                       {
@@ -315,7 +315,15 @@
                 "subtext": "init function",
                 "views": ["initCall"],
                 "default": false
-            }
+            },
+          "pubsubOnList": {
+            "menu": true,
+            "icon": "&#xf004;",
+            "label": "Pubsub on List",
+            "subtext": "Pubsub on List",
+            "views": ["pubsubOnList"],
+            "default": false
+          }
 
         },
         "large": {
