@@ -13,11 +13,11 @@ _testList = {
     	 	_testList.model = model;
     	 });
 
-    	 layout.attach('#testListFront');
+    	 //layout.attach('#testListFront');
 
 		setTimeout(
 			function() {
-				_testList._Ctrl();  
+				_testList._Ctrl();
 			}
 			, 1000);
     	
@@ -31,19 +31,20 @@ _testList = {
     Ctrl : function($scope)
     {
     	$scope.data = _testList.model;
+        $scope.testVar = "Test item on list";
     },
 
     _Ctrl : function()
   	{
 	    e = document.getElementById('testListFront__FACE');
-	    
+
 	    scope = angular.element(e).scope();
-	    
-	    scope.$apply(function() 
-	    {  
+
+	    scope.$apply(function()
+	    {
 	       scope.data = _testList.model;
-	    }); 
-  },
+	    });
+  }
 
 
 
