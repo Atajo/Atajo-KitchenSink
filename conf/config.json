@@ -9,7 +9,16 @@
       "ADMINISTRATOR" : "support@atajo.co.za"
    },
 
-   "VERSIONS"   :
+  "SYNC" :
+  {
+    "showStatusOnFooter" : true,
+    "parallelSync"       : false,
+    "parallelBatch"      : false,
+    "autoSyncFrequency" : "0"
+  },
+
+
+  "VERSIONS"   :
    {
       "DEV" : { "ID" : "1.0", "DEBUG":true,  "COREVERSION" : "1.0" },
       "QAS" : { "ID"  : "1.0", "DEBUG":true,  "COREVERSION" : "1.0" },
@@ -322,6 +331,14 @@
             "label": "Pubsub on List",
             "subtext": "Pubsub on List",
             "views": ["pubsubOnList"],
+            "default": false
+          },
+          "syncAnytime": {
+            "menu": true,
+            "icon": "&#xf004;",
+            "label": "Sync Anytime",
+            "subtext": "Sync Anytime",
+            "views": ["syncStart"],
             "default": false
           }
 

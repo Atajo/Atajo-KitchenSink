@@ -1,17 +1,18 @@
 <card id="testList" fill="true" >
   <face id="testListFront" settings="default:true" controller="_testList.Ctrl">
-    <ctl>Kitchen Sink Test List</ctl>
+    <!--<ctl>Kitchen Sink Test List</ctl>-->
+      <ctl ><button onClick="sync.startSync();"> A SYNC BUTTON </button></ctl>
     <ctr>
     </ctr>
     <content>
       <ul>
         <li class="cardListElement">
-          <table>  
-            <!-- <tr>
-              <td class="txtTitle" onClick="layout.show('screenFlip');">Screen Flip<br/>
-                <x class="cardListElementSubText">JUST FOR TESTING WITH Tab3 lite</x>
+          <table>
+             <!--<tr>
+              <td class="txtTitle" onClick="layout.show('screenFlip');">{{testVar}}<br/>
+                <x class="cardListElementSubText">{{testVar}}</x>
               </td>
-            </tr>  -->
+            </tr>-->
             <tr>
               <td class="txtTitle" onClick="layout.show('jobQueue');">Job Queue<br/>
                 <x class="cardListElementSubText">Test the Job Queue</x>
@@ -127,6 +128,11 @@
                 <x class="cardListElementSubText">FlashLight</x>
               </td>
             </tr>
+              <tr>
+                  <td class="txtTitle" onClick="sync.startSync();">SYNC ON DEMAND<br/>
+                      <x class="cardListElementSubText">START SYNC</x>
+                  </td>
+              </tr>
           </table>
         </li>
       </ul>
