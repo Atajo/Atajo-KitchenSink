@@ -69,8 +69,9 @@
 
       "login": {
 
-                  "enabled"  : false,
+                  "enabled"  : true,
                   "heading"  : "Login",
+                  "timeout" : 20000,
                   "fields": [
                       {
                           "name": "username",
