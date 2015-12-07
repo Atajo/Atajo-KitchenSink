@@ -4,10 +4,24 @@ var _log = require('../provider/lib/log');
 
 exports.req = function (obj, cb) {
 
-		_log.d("LOGIN AUTH HANDLER CALLED: " + JSON.stringify(obj))
-	    obj.RESPONSE = true;
-		cb(obj);
-		return;
+	_log.d("LOGIN AUTH HANDLER CALLED: " + JSON.stringify(obj))
+
+    var delay=5000; //1 seconds
+
+    setTimeout(function(){
+        //your code to be executed after 5 seconds
+        obj.RESPONSE = true;
+
+
+        //To demonstrate custom error message on GENERIC 1.7
+        //obj.RESPONSE = false;
+        //obj.MESSAGE = "COULD NOT LOGIN. PLEASE TRY AGAIN";
+
+
+        cb(obj);
+        return;
+    }, delay);
+
 
 /*
 		community.loginToken(obj.credentials.username, obj.credentials.password, function(token, response) {
